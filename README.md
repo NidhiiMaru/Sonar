@@ -10,9 +10,9 @@ runs a *simulated* AI layer over them (detection, classification, forecast), and
 one ranked, auditable action queue. Every AI claim shows its **confidence**, its **source
 frame** and its **model version** — trust the AI, and audit it.
 
-🌊 **Live:** https://sonar.vercel.app
 📦 **Repo:** https://github.com/NidhiiMaru/Sonar
-🧭 **Team:** Sonar
+🧭 **Team:** Sonar Team
+🚀 **Run it:** `pnpm install && pnpm dev` → http://localhost:3000
 
 ---
 
@@ -44,7 +44,7 @@ Confidence is never 1.0; incidents below 70% are surfaced as **"needs human revi
 
 Next.js 16 (App Router, TypeScript strict) · Tailwind CSS v4 · Radix UI primitives ·
 Framer Motion · Recharts (dynamic import) · React-Leaflet + CARTO dark_matter ·
-Zustand · Zod · `next/font` · `next/image` · `next/og`. Deployed on Vercel.
+Zustand · Zod · `next/font` · `next/image` · `next/og`.
 
 No backend, no database — all data is hardcoded/simulated (permitted by the Round 2 rules)
 and validated through typed **zod adapters** shaped to match the real open APIs they stand
