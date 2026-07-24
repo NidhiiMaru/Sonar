@@ -18,6 +18,7 @@ import { Panel, PanelBody, PanelHeader } from "@/components/ui/Panel";
 import { ButtonLink } from "@/components/ui/Button";
 import { ConfidenceChip } from "@/components/ui/ConfidenceChip";
 import { GithubMark } from "@/components/ui/GithubMark";
+import { RankingFormulaSandbox } from "@/components/about/RankingFormulaSandbox";
 
 const PIPELINE = [
   { icon: Radar, title: "Sense", real: true, copy: "Five feeds pour in — AUV/ROV video, sonar, satellite, IoT buoys and citizen reports." },
@@ -226,6 +227,10 @@ export default function AboutPage() {
               </p>
             </PanelBody>
           </Panel>
+        </div>
+        
+        <div className="mt-6">
+          <RankingFormulaSandbox />
         </div>
       </section>
 

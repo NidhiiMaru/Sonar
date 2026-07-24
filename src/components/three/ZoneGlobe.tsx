@@ -1,11 +1,12 @@
 "use client";
 
-import { Suspense, useMemo, useRef } from "react";
+import { Suspense, useMemo, useRef, useState } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { OrbitControls, useTexture, useGLTF } from "@react-three/drei";
 import * as THREE from "three";
 import zonesFixture from "@/fixtures/zones.json";
 import { riskToSeverity } from "@/lib/ui-meta";
+import { sonarAudio } from "@/lib/sonar-audio";
 
 const SEV_HEX: Record<string, string> = { low: "#34D399", medium: "#FBBF24", high: "#FB7185" };
 
@@ -99,6 +100,7 @@ function Stars() {
 /* ── Beacon — pillar + tip + radar-pulse ring at a zone ──────────── */
 function Beacon({ zone, index }: { zone: Zone; index: number }) {
   const ring = useRef<THREE.Mesh>(null);
+  const [hovered, setHovered] = useState(false);
   const hex = SEV_HEX[riskToSeverity(zone.riskScore)];
   const t = zone.riskScore / 100;
   const height = 0.1 + t * 0.22;
@@ -131,13 +133,26 @@ function Beacon({ zone, index }: { zone: Zone; index: number }) {
         <cylinderGeometry args={[0.004, 0.004, height, 6]} />
         <meshBasicMaterial color={hex} transparent opacity={0.9} />
       </mesh>
-      <mesh position={tip}>
+      <mesh
+        position={tip}
+        scale={hovered ? 1.5 : 1}
+        onPointerOver={(e) => {
+          e.stopPropagation();
+          setHovered(true);
+          sonarAudio.playClickBlip();
+          document.body.style.cursor = "pointer";
+        }}
+        onPointerOut={() => {
+          setHovered(false);
+          document.body.style.cursor = "auto";
+        }}
+      >
         <sphereGeometry args={[0.02 + t * 0.012, 16, 16]} />
         <meshBasicMaterial color={hex} />
       </mesh>
-      <mesh position={tip}>
+      <mesh position={tip} scale={hovered ? 1.6 : 1}>
         <sphereGeometry args={[0.038 + t * 0.02, 16, 16]} />
-        <meshBasicMaterial color={hex} transparent opacity={0.16} blending={THREE.AdditiveBlending} depthWrite={false} />
+        <meshBasicMaterial color={hex} transparent opacity={hovered ? 0.32 : 0.16} blending={THREE.AdditiveBlending} depthWrite={false} />
       </mesh>
       <mesh ref={ring} position={surface.clone().multiplyScalar(1.003)} quaternion={ringQuat}>
         <ringGeometry args={[baseRing, baseRing * 1.35, 40]} />

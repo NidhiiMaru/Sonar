@@ -22,6 +22,8 @@ import { riskToSeverity } from "@/lib/ui-meta";
 import { LazyGlobe } from "@/components/three/LazyGlobe";
 import { MarineSnow } from "@/components/landing/MarineSnow";
 import { StatCounter } from "@/components/landing/StatCounter";
+import { BathymetricDepthMeter } from "@/components/landing/BathymetricDepthMeter";
+import { InteractiveStepCard } from "@/components/landing/InteractiveStepCard";
 import { SonarSweep } from "@/components/landing/SonarSweep";
 import { GodRays } from "@/components/landing/GodRays";
 
@@ -96,6 +98,7 @@ export default async function Home() {
 
   return (
     <>
+      <BathymetricDepthMeter />
       {/* 1 · HERO — cinematic descent */}
       <section className="relative flex min-h-screen items-center overflow-hidden">
         {/* Hero backdrop as a CSS background, not an <img>: background images are
@@ -231,22 +234,13 @@ export default async function Home() {
             {STEPS.map((step, i) => {
               const Icon = step.icon;
               return (
-                <Reveal
-                  as="li"
-                  key={step.name}
-                  delay={i * 0.07}
-                  className="flex flex-col gap-4 rounded-[var(--radius-md)] border border-line bg-surface p-6 transition-colors hover:border-line-bright"
-                >
-                  <div className="flex items-center gap-3">
-                    <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-line-bright bg-surface-2 text-glow">
-                      <Icon size={20} aria-hidden="true" />
-                    </span>
-                    <span className="tabular text-sm font-semibold text-text-dim">
-                      0{i + 1}
-                    </span>
-                  </div>
-                  <h3 className="font-display text-h3 font-semibold text-text">{step.name}</h3>
-                  <p className="text-sm text-text-muted">{step.copy}</p>
+                <Reveal key={step.name} delay={i * 0.07}>
+                  <InteractiveStepCard
+                    index={i}
+                    name={step.name}
+                    copy={step.copy}
+                    icon={<Icon size={20} aria-hidden="true" />}
+                  />
                 </Reveal>
               );
             })}

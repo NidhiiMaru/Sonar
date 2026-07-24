@@ -46,6 +46,8 @@ function filterSpecies(
   });
 }
 
+import { SpeciesWorkspace } from "@/components/species/SpeciesWorkspace";
+
 export default async function SpeciesPage({
   searchParams,
 }: {
@@ -56,53 +58,19 @@ export default async function SpeciesPage({
   const results = filterSpecies(species, sp);
 
   return (
-    <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-20">
+    <div className="w-full max-w-[1700px] mx-auto px-4 py-8 sm:px-6 sm:py-12">
       <JsonLd data={websiteLd} />
 
       <SectionHeading
         as="h1"
         eyebrow="Biodiversity"
         title="Species Explorer"
-        lede="Deep-sea and reef species we monitor across the guarded zones — population trend, IUCN conservation status and where each one is sighted, drawn from open marine biodiversity data."
+        lede="Deep-sea and reef species we monitor across guarded zones — population trend, IUCN conservation status and sighting profiles."
       />
 
-      <div className="mt-8">
-        <SpeciesFilterBar zones={zones.map((z) => ({ id: z.id, name: z.name }))} />
+      <div className="mt-6">
+        <SpeciesWorkspace speciesList={results} allZones={zones} />
       </div>
-
-      <h2 className="sr-only">Results</h2>
-      <p className="mt-6 text-sm text-text-muted" aria-live="polite">
-        <span className="tabular font-medium text-text">{results.length}</span>{" "}
-        {results.length === 1 ? "species" : "species"}
-        {results.length !== species.length && (
-          <span className="text-text-dim">
-            {" "}
-            of <span className="tabular">{species.length}</span>
-          </span>
-        )}
-      </p>
-
-      {results.length > 0 ? (
-        <ul className="mt-4 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
-          {results.map((s, i) => (
-            <li key={s.id}>
-              <SpeciesCard species={s} priority={i < 4} />
-            </li>
-          ))}
-        </ul>
-      ) : (
-        <div className="mt-4">
-          <EmptyState
-            title="No species match these filters"
-            hint="Try a different name, conservation status, trend or zone — or clear the filters to see the full list."
-            action={
-              <ButtonLink href="/species" variant="secondary" size="sm">
-                Clear filters
-              </ButtonLink>
-            }
-          />
-        </div>
-      )}
     </div>
   );
 }

@@ -12,6 +12,7 @@ import { MiniMap } from "@/components/dashboard/MiniMap";
 import { RecentDetections } from "@/components/dashboard/RecentDetections";
 import { JsonLd, datasetLd } from "@/components/seo/JsonLd";
 import { TilePreconnect } from "@/components/map/TilePreconnect";
+import { ConsoleTelemetryTicker } from "@/components/dashboard/ConsoleTelemetryTicker";
 
 export const metadata = pageMetadata({
   title: "Console — Sonar",
@@ -39,6 +40,7 @@ export default async function DashboardPage() {
     <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6">
       <JsonLd data={datasetLd} />
       <TilePreconnect />
+      <ConsoleTelemetryTicker />
 
       <div className="mb-6 flex flex-wrap items-end justify-between gap-4">
         <SectionHeading

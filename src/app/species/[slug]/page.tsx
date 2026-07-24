@@ -12,6 +12,7 @@ import { cn } from "@/lib/utils";
 import { Panel, PanelBody } from "@/components/ui/Panel";
 import { Sparkline } from "@/components/ui/Sparkline";
 import { JsonLd } from "@/components/seo/JsonLd";
+import { SpeciesDepthBar } from "@/components/species/SpeciesDepthBar";
 
 export async function generateStaticParams() {
   const species = await getSpecies();
@@ -118,17 +119,11 @@ export default async function SpeciesDetailPage({
 
           <p className="max-w-[60ch] text-text-muted">{s.blurb}</p>
 
-          {/* Quick facts */}
-          <dl className="grid grid-cols-1 gap-3 sm:grid-cols-2">
+          {/* Quick facts & Depth visualizer */}
+          <div className="flex flex-col gap-4">
             <Panel as="div">
-              <PanelBody className="flex flex-col gap-1.5 p-4">
-                <dt className="flex items-center gap-1.5 text-xs font-medium uppercase tracking-wide text-text-dim">
-                  <Ruler size={13} aria-hidden="true" />
-                  Depth range
-                </dt>
-                <dd className="tabular text-lg font-semibold text-text">
-                  {s.depthRange[0]}–{s.depthRange[1]} m
-                </dd>
+              <PanelBody className="p-4">
+                <SpeciesDepthBar depthRange={s.depthRange} />
               </PanelBody>
             </Panel>
 
@@ -147,7 +142,7 @@ export default async function SpeciesDetailPage({
                 </dd>
               </PanelBody>
             </Panel>
-          </dl>
+          </div>
 
           {/* Trend chart */}
           <Panel as="section" aria-labelledby="trend-heading">
