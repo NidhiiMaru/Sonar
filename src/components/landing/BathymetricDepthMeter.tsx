@@ -17,22 +17,34 @@ export function BathymetricDepthMeter() {
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
+    let raf = 0;
+    let ticking = false;
+
+    const update = () => {
+      ticking = false;
       const totalScroll = document.documentElement.scrollHeight - window.innerHeight;
       if (totalScroll <= 0) return;
       const currentScroll = window.scrollY;
       const pct = Math.min(Math.max(currentScroll / totalScroll, 0), 1);
       setScrollPercent(pct);
-
-      // Map 0 -> 1 scroll to 0 -> 11000 meters deep ocean
-      const calculatedDepth = Math.round(pct * 11000);
-      setDepth(calculatedDepth);
+      setDepth(Math.round(pct * 11000)); // 0 -> 11,000 m
       setVisible(currentScroll > 150);
     };
 
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    handleScroll();
-    return () => window.removeEventListener("scroll", handleScroll);
+    // Throttle to one update per animation frame so it tracks scroll in
+    // real time (60fps) instead of easing in only once scrolling stops.
+    const onScroll = () => {
+      if (ticking) return;
+      ticking = true;
+      raf = requestAnimationFrame(update);
+    };
+
+    window.addEventListener("scroll", onScroll, { passive: true });
+    update();
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      cancelAnimationFrame(raf);
+    };
   }, []);
 
   const activeZone = DEPTH_ZONES.find((z) => depth <= z.maxDepth) || DEPTH_ZONES[DEPTH_ZONES.length - 1];
@@ -59,12 +71,12 @@ export function BathymetricDepthMeter() {
       {/* Depth bar indicator */}
       <div className="relative h-48 w-2 rounded-full border border-line bg-abyss/80 backdrop-blur-sm p-0.5 shadow-inner">
         <div
-          className="w-full rounded-full bg-gradient-to-b from-glow via-bio to-alert transition-all duration-150"
+          className="w-full rounded-full bg-gradient-to-b from-glow via-bio to-alert"
           style={{ height: `${Math.max(scrollPercent * 100, 4)}%` }}
         />
         {/* Glowing cursor ring */}
         <div
-          className="absolute -left-1.5 h-5 w-5 -translate-y-1/2 rounded-full border-2 border-glow bg-trench/90 shadow-[0_0_10px_var(--color-glow)] transition-all duration-75 flex items-center justify-center"
+          className="absolute -left-1.5 h-5 w-5 -translate-y-1/2 rounded-full border-2 border-glow bg-trench/90 shadow-[0_0_10px_var(--color-glow)] flex items-center justify-center"
           style={{ top: `${scrollPercent * 100}%` }}
         >
           <div className="h-1.5 w-1.5 rounded-full bg-glow animate-ping" />

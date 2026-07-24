@@ -9,6 +9,7 @@ import { cn } from "@/lib/utils";
 import { Logo } from "./Logo";
 import { LiveDot } from "@/components/ui/LiveDot";
 import { CommandPalette } from "@/components/command/CommandPalette";
+import { SoundToggle } from "./SoundToggle";
 import { NAV_ITEMS } from "./nav-items";
 
 function isActive(pathname: string, href: string) {
@@ -57,6 +58,7 @@ export function Header() {
 
         <div className="flex items-center gap-3">
           <CommandPalette />
+          <SoundToggle />
           <Link
             href="/dashboard"
             className="hidden rounded-full border border-line-bright bg-surface-2 px-3 py-1 lg:inline-flex focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-glow"

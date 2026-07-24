@@ -234,7 +234,7 @@ export default async function Home() {
             {STEPS.map((step, i) => {
               const Icon = step.icon;
               return (
-                <Reveal key={step.name} delay={i * 0.07}>
+                <Reveal key={step.name} delay={i * 0.07} className="h-full">
                   <InteractiveStepCard
                     index={i}
                     name={step.name}

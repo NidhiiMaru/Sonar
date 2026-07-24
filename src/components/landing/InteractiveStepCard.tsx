@@ -17,7 +17,7 @@ export function InteractiveStepCard({ index, name, copy, icon }: Props) {
       whileHover={{ y: -6, scale: 1.02 }}
       transition={{ type: "spring", stiffness: 300, damping: 20 }}
       onMouseEnter={() => sonarAudio.playClickBlip()}
-      className="group relative flex flex-col gap-4 rounded-[var(--radius-md)] border border-line bg-surface p-6 transition-colors hover:border-glow/40 hover:bg-surface-2 shadow-lg"
+      className="group relative flex h-full flex-col gap-4 rounded-[var(--radius-md)] border border-line bg-surface p-6 transition-colors hover:border-glow/40 hover:bg-surface-2 shadow-lg"
     >
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-3">
