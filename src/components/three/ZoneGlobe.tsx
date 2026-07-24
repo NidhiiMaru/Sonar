@@ -1,8 +1,8 @@
 "use client";
 
-import { useMemo, useRef } from "react";
+import { Suspense, useMemo, useRef } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
-import { OrbitControls } from "@react-three/drei";
+import { OrbitControls, useTexture } from "@react-three/drei";
 import * as THREE from "three";
 import zonesFixture from "@/fixtures/zones.json";
 import { riskToSeverity } from "@/lib/ui-meta";
@@ -32,8 +32,8 @@ function Atmosphere() {
     () =>
       new THREE.ShaderMaterial({
         uniforms: {
-          uColor: { value: new THREE.Color("#22d3ee") },
-          uIntensity: { value: 1.15 },
+          uColor: { value: new THREE.Color("#4bc8f0") },
+          uIntensity: { value: 1.1 },
         },
         vertexShader: /* glsl */ `
           varying vec3 vNormal;
@@ -52,7 +52,7 @@ function Atmosphere() {
           uniform float uIntensity;
           void main() {
             float rim = 1.0 - max(dot(vNormal, vView), 0.0);
-            rim = pow(rim, 3.2);
+            rim = pow(rim, 3.0);
             gl_FragColor = vec4(uColor * rim * uIntensity, rim);
           }
         `,
@@ -63,7 +63,7 @@ function Atmosphere() {
       }),
     [],
   );
-  return <mesh scale={1.28} geometry={SPHERE} material={material} />;
+  return <mesh scale={1.22} geometry={UNIT_SPHERE} material={material} />;
 }
 
 /* ── Starfield — faint depth behind the planet ───────────────────── */
@@ -73,7 +73,6 @@ function Stars() {
     const N = 700;
     const pos = new Float32Array(N * 3);
     for (let i = 0; i < N; i++) {
-      // deterministic scatter on a large shell
       const u = frand(i + 1);
       const v = frand(i + 99);
       const theta = u * Math.PI * 2;
@@ -128,23 +127,19 @@ function Beacon({ zone, index }: { zone: Zone; index: number }) {
 
   return (
     <group>
-      {/* pillar */}
       <mesh position={mid} quaternion={pillarQuat}>
         <cylinderGeometry args={[0.004, 0.004, height, 6]} />
-        <meshBasicMaterial color={hex} transparent opacity={0.85} />
+        <meshBasicMaterial color={hex} transparent opacity={0.9} />
       </mesh>
-      {/* glowing tip */}
       <mesh position={tip}>
         <sphereGeometry args={[0.02 + t * 0.012, 16, 16]} />
         <meshBasicMaterial color={hex} />
       </mesh>
-      {/* tip halo */}
       <mesh position={tip}>
         <sphereGeometry args={[0.05 + t * 0.03, 16, 16]} />
-        <meshBasicMaterial color={hex} transparent opacity={0.22} blending={THREE.AdditiveBlending} depthWrite={false} />
+        <meshBasicMaterial color={hex} transparent opacity={0.24} blending={THREE.AdditiveBlending} depthWrite={false} />
       </mesh>
-      {/* radar-pulse ring on the surface */}
-      <mesh ref={ring} position={surface.clone().multiplyScalar(1.002)} quaternion={ringQuat}>
+      <mesh ref={ring} position={surface.clone().multiplyScalar(1.003)} quaternion={ringQuat}>
         <ringGeometry args={[baseRing, baseRing * 1.35, 40]} />
         <meshBasicMaterial color={hex} transparent opacity={0.5} side={THREE.DoubleSide} blending={THREE.AdditiveBlending} depthWrite={false} />
       </mesh>
@@ -152,28 +147,64 @@ function Beacon({ zone, index }: { zone: Zone; index: number }) {
   );
 }
 
-function Globe({ animate }: { animate: boolean }) {
+/* ── Real Earth — NASA Blue Marble day map, bathymetry specular,
+   normals, city lights, and a drifting cloud layer. ─────────────── */
+function Earth() {
+  const clouds = useRef<THREE.Mesh>(null);
+  const [day, normal, specular, cloud, lights] = useTexture([
+    "/textures/earth_atmos_2048.jpg",
+    "/textures/earth_normal_2048.jpg",
+    "/textures/earth_specular_2048.jpg",
+    "/textures/earth_clouds_1024.png",
+    "/textures/earth_lights_2048.png",
+  ]);
+
+  useMemo(() => {
+    day.colorSpace = THREE.SRGBColorSpace;
+    lights.colorSpace = THREE.SRGBColorSpace;
+    cloud.colorSpace = THREE.SRGBColorSpace;
+    day.anisotropy = 8;
+  }, [day, lights, cloud]);
+
+  useFrame((_, d) => {
+    if (clouds.current) clouds.current.rotation.y += d * 0.015;
+  });
+
+  return (
+    <group>
+      {/* the planet */}
+      <mesh geometry={UNIT_SPHERE}>
+        <meshPhongMaterial
+          map={day}
+          normalMap={normal}
+          normalScale={new THREE.Vector2(0.7, 0.7)}
+          specularMap={specular}
+          specular={new THREE.Color("#2b5673")}
+          shininess={16}
+          emissiveMap={lights}
+          emissive={new THREE.Color("#ffcf87")}
+          emissiveIntensity={0.55}
+        />
+      </mesh>
+      {/* drifting clouds */}
+      <mesh ref={clouds} scale={1.012} geometry={UNIT_SPHERE}>
+        <meshPhongMaterial map={cloud} transparent opacity={0.72} depthWrite={false} />
+      </mesh>
+    </group>
+  );
+}
+
+function Scene({ animate }: { animate: boolean }) {
   const group = useRef<THREE.Group>(null);
   const zones = zonesFixture as unknown as Zone[];
 
   useFrame((_, delta) => {
-    if (animate && group.current) group.current.rotation.y += delta * 0.11;
+    if (animate && group.current) group.current.rotation.y += delta * 0.09;
   });
-
-  const grid = useMemo(() => new THREE.SphereGeometry(1.002, 36, 24), []);
 
   return (
     <group ref={group} rotation={[0.4, 0, 0.08]}>
-      {/* ocean body */}
-      <mesh geometry={SPHERE}>
-        <meshStandardMaterial color="#082238" roughness={0.72} metalness={0.15} emissive="#04141f" emissiveIntensity={0.6} />
-      </mesh>
-      {/* graticule — instrument grid */}
-      <lineSegments>
-        <wireframeGeometry args={[grid]} />
-        <lineBasicMaterial color="#1b8fb0" transparent opacity={0.28} />
-      </lineSegments>
-      {/* zone beacons */}
+      <Earth />
       {zones.map((z, i) => (
         <Beacon key={z.id} zone={z} index={i} />
       ))}
@@ -189,13 +220,14 @@ export default function ZoneGlobe({ animate = true }: { animate?: boolean }) {
       gl={{ antialias: true, alpha: true }}
       style={{ background: "transparent" }}
     >
-      <ambientLight intensity={0.55} />
-      <directionalLight position={[3, 2, 4]} intensity={1.15} color="#bfe9ff" />
-      <directionalLight position={[-4, -1, -3]} intensity={0.4} color="#22d3ee" />
-      <pointLight position={[0, 3, 1]} intensity={0.3} color="#a78bfa" />
+      <ambientLight intensity={0.35} />
+      <directionalLight position={[4, 2, 3]} intensity={1.6} color="#fff4e0" />
+      <directionalLight position={[-4, -1, -3]} intensity={0.35} color="#22d3ee" />
       <Stars />
       <Atmosphere />
-      <Globe animate={animate} />
+      <Suspense fallback={null}>
+        <Scene animate={animate} />
+      </Suspense>
       <OrbitControls
         enablePan={false}
         enableZoom={false}
@@ -208,7 +240,7 @@ export default function ZoneGlobe({ animate = true }: { animate?: boolean }) {
 }
 
 /* shared unit sphere geometry */
-const SPHERE = new THREE.SphereGeometry(1, 64, 64);
+const UNIT_SPHERE = new THREE.SphereGeometry(1, 64, 64);
 
 /* deterministic pseudo-random so SSR/CSR agree */
 function frand(seed: number): number {
