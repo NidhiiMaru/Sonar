@@ -1,0 +1,346 @@
+[
+  {
+    "id": "Z-01",
+    "name": "Mariana Rim",
+    "polygon": [
+      [
+        15.65,
+        149.32
+      ],
+      [
+        16.91,
+        148.2
+      ],
+      [
+        16.55,
+        146.67
+      ],
+      [
+        15.54,
+        145.85
+      ],
+      [
+        14.43,
+        146.76
+      ],
+      [
+        14.26,
+        148.18
+      ]
+    ],
+    "centroid": [
+      15.5,
+      147.5
+    ],
+    "riskScore": 42,
+    "riskDelta": -10,
+    "biodiversityIndex": 88,
+    "drivers": {
+      "sstAnomaly": 1.1,
+      "drift": 44,
+      "vesselTraffic": 38,
+      "history": 52
+    }
+  },
+  {
+    "id": "Z-02",
+    "name": "Coral Triangle N",
+    "polygon": [
+      [
+        3.88,
+        124.01
+      ],
+      [
+        5.38,
+        123.56
+      ],
+      [
+        5.02,
+        122.49
+      ],
+      [
+        4.12,
+        121.98
+      ],
+      [
+        3.11,
+        122.43
+      ],
+      [
+        2.69,
+        123.48
+      ]
+    ],
+    "centroid": [
+      4,
+      123
+    ],
+    "riskScore": 78,
+    "riskDelta": 8,
+    "biodiversityIndex": 95,
+    "drivers": {
+      "sstAnomaly": 2.3,
+      "drift": 66,
+      "vesselTraffic": 88,
+      "history": 79
+    }
+  },
+  {
+    "id": "Z-03",
+    "name": "Sulu Shelf",
+    "polygon": [
+      [
+        7.63,
+        121.72
+      ],
+      [
+        8.69,
+        120.74
+      ],
+      [
+        8.08,
+        119.22
+      ],
+      [
+        6.9,
+        119.22
+      ],
+      [
+        6.49,
+        120.82
+      ]
+    ],
+    "centroid": [
+      7.5,
+      120.5
+    ],
+    "riskScore": 61,
+    "riskDelta": 3,
+    "biodiversityIndex": 72,
+    "drivers": {
+      "sstAnomaly": 1.6,
+      "drift": 58,
+      "vesselTraffic": 71,
+      "history": 63
+    }
+  },
+  {
+    "id": "Z-04",
+    "name": "Banda Deep",
+    "polygon": [
+      [
+        -5.53,
+        129.96
+      ],
+      [
+        -4.75,
+        129.1
+      ],
+      [
+        -4.6,
+        127.71
+      ],
+      [
+        -5.5,
+        127.4
+      ],
+      [
+        -6.58,
+        127.88
+      ],
+      [
+        -6.36,
+        129.27
+      ]
+    ],
+    "centroid": [
+      -5.5,
+      128.5
+    ],
+    "riskScore": 37,
+    "riskDelta": 1,
+    "biodiversityIndex": 80,
+    "drivers": {
+      "sstAnomaly": 0.9,
+      "drift": 40,
+      "vesselTraffic": 34,
+      "history": 45
+    }
+  },
+  {
+    "id": "Z-05",
+    "name": "Andaman Ridge",
+    "polygon": [
+      [
+        9.92,
+        95.59
+      ],
+      [
+        10.59,
+        94.84
+      ],
+      [
+        10.71,
+        93.53
+      ],
+      [
+        10.25,
+        92.73
+      ],
+      [
+        9.46,
+        92.5
+      ],
+      [
+        9.2,
+        93.67
+      ],
+      [
+        9.18,
+        95.12
+      ]
+    ],
+    "centroid": [
+      10,
+      94
+    ],
+    "riskScore": 18,
+    "riskDelta": -4,
+    "biodiversityIndex": 68,
+    "drivers": {
+      "sstAnomaly": 0.4,
+      "drift": 22,
+      "vesselTraffic": 18,
+      "history": 20
+    }
+  },
+  {
+    "id": "Z-06",
+    "name": "Sunda Trench",
+    "polygon": [
+      [
+        -9.37,
+        105
+      ],
+      [
+        -8.36,
+        104.55
+      ],
+      [
+        -8.83,
+        102.93
+      ],
+      [
+        -10.12,
+        103.13
+      ],
+      [
+        -10.57,
+        104.34
+      ]
+    ],
+    "centroid": [
+      -9.5,
+      104
+    ],
+    "riskScore": 69,
+    "riskDelta": 3,
+    "biodiversityIndex": 61,
+    "drivers": {
+      "sstAnomaly": 1.8,
+      "drift": 61,
+      "vesselTraffic": 84,
+      "history": 70
+    }
+  },
+  {
+    "id": "Z-07",
+    "name": "Bismarck Sea",
+    "polygon": [
+      [
+        -3.53,
+        151.4
+      ],
+      [
+        -2.38,
+        150.74
+      ],
+      [
+        -2.63,
+        149.53
+      ],
+      [
+        -3.33,
+        148.75
+      ],
+      [
+        -4.49,
+        149.43
+      ],
+      [
+        -4.63,
+        150.6
+      ]
+    ],
+    "centroid": [
+      -3.5,
+      150
+    ],
+    "riskScore": 38,
+    "riskDelta": 3,
+    "biodiversityIndex": 84,
+    "drivers": {
+      "sstAnomaly": 1,
+      "drift": 47,
+      "vesselTraffic": 41,
+      "history": 33
+    }
+  },
+  {
+    "id": "Z-08",
+    "name": "Palawan Trough",
+    "polygon": [
+      [
+        10.44,
+        118.93
+      ],
+      [
+        11.14,
+        118.45
+      ],
+      [
+        11.42,
+        117.88
+      ],
+      [
+        10.88,
+        117.1
+      ],
+      [
+        10.19,
+        117.16
+      ],
+      [
+        9.61,
+        117.7
+      ],
+      [
+        9.87,
+        118.52
+      ]
+    ],
+    "centroid": [
+      10.5,
+      118
+    ],
+    "riskScore": 15,
+    "riskDelta": 6,
+    "biodiversityIndex": 57,
+    "drivers": {
+      "sstAnomaly": 0.3,
+      "drift": 19,
+      "vesselTraffic": 15,
+      "history": 16
+    }
+  }
+]
