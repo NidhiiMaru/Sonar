@@ -1,0 +1,142 @@
+{
+  "sp-dumbo-octopus": {
+    "src": "/images/sp-dumbo-octopus.jpg",
+    "width": 1200,
+    "height": 675
+  },
+  "sp-anglerfish": {
+    "src": "/images/sp-anglerfish.jpg",
+    "width": 1200,
+    "height": 675
+  },
+  "sp-tubeworms": {
+    "src": "/images/sp-tubeworms.jpg",
+    "width": 1200,
+    "height": 1546
+  },
+  "sp-sea-turtle": {
+    "src": "/images/sp-sea-turtle.jpg",
+    "width": 1200,
+    "height": 900
+  },
+  "sp-humpback": {
+    "src": "/images/sp-humpback.jpg",
+    "width": 1200,
+    "height": 879
+  },
+  "sp-sixgill-shark": {
+    "src": "/images/sp-sixgill-shark.jpg",
+    "width": 1200,
+    "height": 1600
+  },
+  "sp-crown-of-thorns": {
+    "src": "/images/sp-crown-of-thorns.jpg",
+    "width": 1200,
+    "height": 800
+  },
+  "sp-pink-jelly": {
+    "src": "/images/sp-pink-jelly.jpg",
+    "width": 1200,
+    "height": 675
+  },
+  "sp-bamboo-coral": {
+    "src": "/images/sp-bamboo-coral.jpg",
+    "width": 1200,
+    "height": 675
+  },
+  "sp-rockfish": {
+    "src": "/images/sp-rockfish.jpg",
+    "width": 1200,
+    "height": 900
+  },
+  "sp-red-crab": {
+    "src": "/images/sp-red-crab.jpg",
+    "width": 1200,
+    "height": 675
+  },
+  "sp-lobe-coral": {
+    "src": "/images/sp-lobe-coral.jpg",
+    "width": 1200,
+    "height": 900
+  },
+  "ev-ghostnet-turtle": {
+    "src": "/images/ev-ghostnet-turtle.jpg",
+    "width": 960,
+    "height": 1280
+  },
+  "ev-ghostnet": {
+    "src": "/images/ev-ghostnet.jpg",
+    "width": 1200,
+    "height": 900
+  },
+  "ev-plastic-bottle": {
+    "src": "/images/ev-plastic-bottle.jpg",
+    "width": 1200,
+    "height": 1800
+  },
+  "ev-plastic-dark": {
+    "src": "/images/ev-plastic-dark.jpg",
+    "width": 1200,
+    "height": 800
+  },
+  "ev-plastic-shore": {
+    "src": "/images/ev-plastic-shore.jpg",
+    "width": 1200,
+    "height": 800
+  },
+  "ev-bleached": {
+    "src": "/images/ev-bleached.jpg",
+    "width": 1200,
+    "height": 900
+  },
+  "hero-main": {
+    "src": "/images/hero-main.jpg",
+    "width": 2000,
+    "height": 1334
+  },
+  "hero-rov": {
+    "src": "/images/hero-rov.jpg",
+    "width": 1920,
+    "height": 1080
+  },
+  "hero-jelly": {
+    "src": "/images/hero-jelly.jpg",
+    "width": 2000,
+    "height": 1334
+  },
+  "hero-bubbles": {
+    "src": "/images/hero-bubbles.jpg",
+    "width": 2000,
+    "height": 1123
+  },
+  "hero-submerged": {
+    "src": "/images/hero-submerged.jpg",
+    "width": 2000,
+    "height": 1500
+  },
+  "tech-auv": {
+    "src": "/images/tech-auv.jpg",
+    "width": 1000,
+    "height": 669
+  },
+  "tech-rov-benthic": {
+    "src": "/images/tech-rov-benthic.jpg",
+    "width": 1000,
+    "height": 563
+  },
+  "tech-sonar": {
+    "src": "/images/tech-sonar.jpg",
+    "width": 1000,
+    "height": 773
+  },
+  "tech-rov-launch": {
+    "src": "/images/tech-rov-launch.jpg",
+    "width": 1000,
+    "height": 1510
+  },
+  "hero-poster": {
+    "src": "/images/hero-poster.jpg",
+    "width": 1280,
+    "height": 854
+  }
+}
