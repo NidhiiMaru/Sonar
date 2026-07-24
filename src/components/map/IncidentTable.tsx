@@ -7,7 +7,7 @@ import { EmptyState } from "@/components/ui/EmptyState";
 import { formatCoords, formatDateTime, timeAgo } from "@/lib/utils";
 
 /**
- * The accessible, crawlable equivalent of the map. Same
+ * The accessible, crawlable equivalent of the map (03-DESIGN-SYSTEM §7). Same
  * filtered incidents as the map above it — keyboard users, screen readers and
  * search crawlers all get the full content. Real <table> on md+, cards on mobile.
  */

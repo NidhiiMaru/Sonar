@@ -14,7 +14,7 @@ import {
 } from "@/components/forecast/forecast-utils";
 
 export const metadata = pageMetadata({
-  title: "Risk Forecast — Sonar",
+  title: "Risk Forecast — DeepSea Guardian",
   description:
     "7- and 30-day predictive environmental risk by ocean zone, with the drivers behind every forecast.",
   path: "/forecast",

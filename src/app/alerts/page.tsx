@@ -8,7 +8,7 @@ import { Skeleton } from "@/components/ui/Skeleton";
 import { AlertsBoard } from "@/components/alerts/AlertsBoard";
 
 export const metadata = pageMetadata({
-  title: "Alerts & Dispatch — Sonar",
+  title: "Alerts & Dispatch — DeepSea Guardian",
   description:
     "Triage deep-ocean incidents by severity and confidence, assign response vessels, and export evidence packs.",
   path: "/alerts",

@@ -7,6 +7,7 @@ import { IncidentDrawer } from "@/components/incident/IncidentDrawer";
 import { SeverityDot } from "@/components/ui/SeverityBadge";
 import { SEVERITY_META } from "@/lib/ui-meta";
 import type { Severity } from "@/lib/types";
+import { SonarRadarSweep } from "./SonarRadarSweep";
 
 /** Interactive map surface + shared incident drawer. Selection is client state;
  *  the accessible table (rendered server-side below the map) mirrors the data. */
@@ -36,6 +37,7 @@ export function MapExplorer({
           onSelect={setSelectedId}
           interactive
         />
+        <SonarRadarSweep />
       </div>
 
       {/* Legend — shapes + labels, greyscale-safe */}

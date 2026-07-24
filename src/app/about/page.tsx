@@ -18,6 +18,7 @@ import { Panel, PanelBody, PanelHeader } from "@/components/ui/Panel";
 import { ButtonLink } from "@/components/ui/Button";
 import { ConfidenceChip } from "@/components/ui/ConfidenceChip";
 import { GithubMark } from "@/components/ui/GithubMark";
+import { RankingFormulaSandbox } from "@/components/about/RankingFormulaSandbox";
 
 const PIPELINE = [
   { icon: Radar, title: "Sense", real: true, copy: "Five feeds pour in — AUV/ROV video, sonar, satellite, IoT buoys and citizen reports." },
@@ -28,9 +29,9 @@ const PIPELINE = [
 ];
 
 export const metadata = pageMetadata({
-  title: "Method & Data — Sonar",
+  title: "Method & Data — DeepSea Guardian",
   description:
-    "How Sonar works, what is real, what is simulated, and the open ocean datasets behind it.",
+    "How DeepSea Guardian works, what is real, what is simulated, and the open ocean datasets behind it.",
   path: "/about",
 });
 
@@ -81,7 +82,7 @@ export default function AboutPage() {
         as="h1"
         eyebrow="Method & honesty"
         title="What's real, and what's simulated"
-        lede="Sonar is built to be trusted. This page is the honest ledger: the software contract is real and production-grade, the ocean data behind it is simulated, and here is exactly where the line falls."
+        lede="DeepSea Guardian is built to be trusted. This page is the honest ledger: the software contract is real and production-grade, the ocean data behind it is simulated, and here is exactly where the line falls."
       />
 
       {/* Real vs Simulated */}
@@ -227,6 +228,10 @@ export default function AboutPage() {
             </PanelBody>
           </Panel>
         </div>
+        
+        <div className="mt-6">
+          <RankingFormulaSandbox />
+        </div>
       </section>
 
       {/* Data sources table */}
@@ -239,7 +244,7 @@ export default function AboutPage() {
         <Panel className="mt-6 overflow-x-auto">
           <table className="w-full border-collapse text-left text-sm">
             <caption className="px-4 py-3 text-left text-xs text-text-dim">
-              Public datasets Sonar is modelled on, and the typed
+              Public datasets DeepSea Guardian is modelled on, and the typed
               adapter each one already maps to.
             </caption>
             <thead>
@@ -339,7 +344,7 @@ export default function AboutPage() {
             <PanelHeader title="Built with AI assistance" />
             <PanelBody>
               <p className="max-w-[65ch] text-sm text-text-muted">
-                Sonar was built with AI assistance: Claude Code for
+                DeepSea Guardian was built with AI assistance: Claude Code for
                 implementation, and Claude for planning, copy and the
                 design-system specification. All code was written and committed
                 during the official Round 2 window. The architecture and every

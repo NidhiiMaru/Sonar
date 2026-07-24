@@ -11,6 +11,9 @@ import { useDispatchStore, effectiveStatus } from "@/lib/store/dispatch";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
 
+import { EvidenceDossierModal } from "./EvidenceDossierModal";
+import { sonarAudio } from "@/lib/sonar-audio";
+
 type Tab = "all" | IncidentStatus;
 const TABS: { v: Tab; label: string }[] = [
   { v: "all", label: "All" },
@@ -35,6 +38,7 @@ export function AlertsBoard({
   const params = useSearchParams();
   const overrides = useDispatchStore((s) => s.overrides);
   const [openId, setOpenId] = useState<string | null>(null);
+  const [dossierIncident, setDossierIncident] = useState<Incident | null>(null);
 
   const tab = (params.get("status") as Tab) ?? "all";
   const zoneById = useMemo(() => new Map(zones.map((z) => [z.id, z])), [zones]);
@@ -99,34 +103,50 @@ export function AlertsBoard({
         </Link>
       </div>
 
-      {visible.length === 0 ? (
-        <EmptyState
-          title={`No ${tab === "all" ? "" : tab} incidents`}
-          hint="Nothing in this bucket right now."
-        />
-      ) : (
-        <ul className="flex flex-col gap-1">
-          {visible.map(({ inc }, i) => (
-            <li key={inc.id}>
-              <IncidentQueueRow
-                incident={inc}
-                zoneName={zoneById.get(inc.zoneId)?.name ?? inc.zoneId}
-                rank={i + 1}
-                showThumb
-                active={inc.id === openId}
-                onSelect={setOpenId}
-              />
-            </li>
-          ))}
-        </ul>
-      )}
+      <div className="flex flex-row overflow-hidden w-full min-h-[500px]">
+        {/* Left Side: Main List (Adjusts width dynamically as sidebar is pulled/resized) */}
+        <div className="flex-1 min-w-0 pr-2 overflow-y-auto transition-all duration-150">
+          {visible.length === 0 ? (
+            <EmptyState
+              title={`No ${tab === "all" ? "" : tab} incidents`}
+              hint="Nothing in this bucket right now."
+            />
+          ) : (
+            <ul className="flex flex-col gap-1.5">
+              {visible.map(({ inc }, i) => (
+                <li key={inc.id}>
+                  <IncidentQueueRow
+                    incident={inc}
+                    zoneName={zoneById.get(inc.zoneId)?.name ?? inc.zoneId}
+                    rank={i + 1}
+                    showThumb
+                    active={inc.id === openId}
+                    onSelect={(id) => {
+                      sonarAudio.playClickBlip();
+                      setOpenId(id);
+                    }}
+                  />
+                </li>
+              ))}
+            </ul>
+          )}
+        </div>
 
-      <IncidentDrawer
-        incident={selected}
-        zone={selected ? zoneById.get(selected.zoneId) : undefined}
-        vessels={vessels}
-        open={openId !== null}
-        onOpenChange={(o) => !o && setOpenId(null)}
+        <IncidentDrawer
+          incident={selected}
+          zone={selected ? zoneById.get(selected.zoneId) : undefined}
+          vessels={vessels}
+          open={openId !== null}
+          onOpenChange={(o) => !o && setOpenId(null)}
+        />
+      </div>
+
+      <EvidenceDossierModal
+        open={dossierIncident !== null}
+        onOpenChange={(o) => !o && setDossierIncident(null)}
+        incident={dossierIncident}
+        zone={dossierIncident ? zoneById.get(dossierIncident.zoneId) ?? null : null}
+        vessel={dossierIncident ? vessels.find((v) => v.id === overrides[dossierIncident.id]?.vesselId) ?? null : null}
       />
     </div>
   );

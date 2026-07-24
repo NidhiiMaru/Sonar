@@ -9,7 +9,7 @@ import { IncidentTable } from "@/components/map/IncidentTable";
 import { TilePreconnect } from "@/components/map/TilePreconnect";
 
 export const metadata = pageMetadata({
-  title: "Live Threat Map — Sonar",
+  title: "Live Threat Map — DeepSea Guardian",
   description:
     "Explore deep-ocean incidents by severity, type and zone: plastic clusters, ghost nets, illegal dumping and coral bleaching.",
   path: "/map",
