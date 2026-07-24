@@ -1,0 +1,183 @@
+@import "tailwindcss";
+
+/* ============================================================
+   Sonar — design tokens
+   Dark by default. Colour is scarce and always means something.
+   ============================================================ */
+
+@theme {
+  /* Surfaces — the descent (surface → deep) */
+  --color-abyss: #04070e;
+  --color-trench: #080d18;
+  --color-surface: #0d1524;
+  --color-surface-2: #131e33;
+  --color-surface-3: #1b2a45;
+  --color-line: #22344f;
+  --color-line-bright: #2f4767;
+
+  /* Text */
+  --color-text: #eaf2ff;
+  --color-text-muted: #a8bcd6;
+  --color-text-dim: #7f97b4;
+
+  /* Signal — bioluminescence (the only saturated colours) */
+  --color-glow: #22d3ee;
+  --color-glow-deep: #0891b2;
+  --color-bio: #34d399;
+  --color-warn: #fbbf24;
+  --color-alert: #fb7185;
+  --color-plum: #a78bfa;
+
+  /* Data-viz ramps (charts only) */
+  --color-viz-1: #22d3ee;
+  --color-viz-2: #a78bfa;
+  --color-viz-3: #34d399;
+  --color-viz-4: #fbbf24;
+  --color-viz-5: #fb7185;
+  --color-viz-6: #60a5fa;
+
+  /* Fonts (self-hosted via next/font) */
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-display: var(--font-space-grotesk), var(--font-inter), sans-serif;
+
+  /* Type scale (clamp-based, no media queries) */
+  --text-display: clamp(2.5rem, 6vw, 4.5rem);
+  --text-display--line-height: 1.05;
+  --text-display--letter-spacing: -0.02em;
+  --text-h1: clamp(2rem, 4vw, 3rem);
+  --text-h1--line-height: 1.1;
+  --text-h1--letter-spacing: -0.015em;
+  --text-h2: clamp(1.5rem, 2.5vw, 2rem);
+  --text-h2--line-height: 1.15;
+  --text-h3: 1.25rem;
+  --text-h3--line-height: 1.3;
+  --text-kpi: clamp(1.75rem, 3vw, 2.5rem);
+  --text-kpi--line-height: 1;
+
+  /* Radius */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+
+  /* Motion */
+  --ease-descent: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* ============================================================
+   Base
+   ============================================================ */
+
+:root {
+  color-scheme: dark;
+}
+
+html {
+  background: var(--color-abyss);
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background: var(--color-trench);
+  color: var(--color-text);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: color-mix(in srgb, var(--color-glow) 30%, transparent);
+  color: var(--color-text);
+}
+
+/* Numerals must never jitter — tabular on data surfaces */
+.tabular {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Visible focus everywhere (a11y scoring line). Components add
+   ring utilities; this is the global fallback so nothing is ever
+   left with `outline:none` and no replacement. */
+:focus-visible {
+  outline: 2px solid var(--color-glow);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+/* Thin, on-theme scrollbars */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-line-bright) transparent;
+}
+
+/* Marine-snow drift — used by the hero particle layer */
+@keyframes drift-down {
+  0% {
+    transform: translate3d(0, -10vh, 0);
+    opacity: 0;
+  }
+  10% {
+    opacity: var(--snow-opacity, 0.5);
+  }
+  90% {
+    opacity: var(--snow-opacity, 0.5);
+  }
+  100% {
+    transform: translate3d(0, 110vh, 0);
+    opacity: 0;
+  }
+}
+
+/* Live pulse — the ONE thing that pulses (plus new-incident badge) */
+@keyframes live-pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.35;
+  }
+}
+
+.animate-live-pulse {
+  animation: live-pulse 2s var(--ease-descent) infinite;
+}
+
+/* Skeleton shimmer */
+@keyframes shimmer {
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+/* Respect the user. Kill all decorative motion. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Print — evidence packs render clean on white. The printable sheet is
+   normally hidden; on print, page chrome hides and only it shows. */
+.print-only {
+  display: none;
+}
+
+@media print {
+  html,
+  body {
+    background: #fff !important;
+    color: #000 !important;
+  }
+  .print-hide,
+  .no-print {
+    display: none !important;
+  }
+  .print-only {
+    display: block !important;
+  }
+}
