@@ -117,7 +117,7 @@ export function CommandPalette() {
             aria-label="Command palette"
           >
             <Dialog.Title className="sr-only">Search Sonar</Dialog.Title>
-            <div className="flex items-center gap-2 border-b border-line px-4">
+            <div className="flex items-center gap-2 border-b border-line px-4 transition-colors focus-within:border-glow/50">
               <Search size={16} className="text-text-dim" />
               <input
                 autoFocus
@@ -125,7 +125,7 @@ export function CommandPalette() {
                 onChange={(e) => setQ(e.target.value)}
                 onKeyDown={onInputKey}
                 placeholder="Jump to a route, species or zone…"
-                className="h-12 flex-1 bg-transparent text-sm text-text placeholder:text-text-dim focus:outline-none"
+                className="h-12 flex-1 bg-transparent text-sm text-text placeholder:text-text-dim outline-none focus:outline-none focus-visible:outline-none"
                 aria-label="Search"
               />
             </div>
