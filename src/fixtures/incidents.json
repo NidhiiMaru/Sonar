@@ -1,0 +1,1020 @@
+[
+  {
+    "id": "INC-2026-0400",
+    "type": "plastic",
+    "severity": "low",
+    "status": "new",
+    "zoneId": "Z-02",
+    "coords": [
+      4.5,
+      123.7
+    ],
+    "detectedAt": "2026-07-20T10:56:00.124Z",
+    "source": "satellite",
+    "imageKey": "ev-plastic-bottle",
+    "ai": {
+      "label": "Plastic debris cluster",
+      "confidence": 0.64,
+      "modelVersion": "dsg-detect-v2.1",
+      "inferredAt": "2026-07-20T10:59:00.124Z",
+      "evidenceFrame": "SATELLITE frame 7831 · INC-2026-0400",
+      "rationale": "Buoyant debris field tracked across two satellite passes; drift vector matches modelled gyre transport."
+    },
+    "rank": 0.61,
+    "recommendedAction": "Task a skimmer sweep on the drift path; notify the coastal cleanup partner."
+  },
+  {
+    "id": "INC-2026-0401",
+    "type": "bleaching",
+    "severity": "low",
+    "status": "new",
+    "zoneId": "Z-01",
+    "coords": [
+      15.58,
+      146.56
+    ],
+    "detectedAt": "2026-07-20T18:27:42.351Z",
+    "source": "auv",
+    "imageKey": "ev-bleached",
+    "ai": {
+      "label": "Coral bleaching event",
+      "confidence": 0.88,
+      "modelVersion": "dsg-thermal-v1.4",
+      "inferredAt": "2026-07-20T18:35:42.351Z",
+      "evidenceFrame": "AUV frame 8132 · INC-2026-0401",
+      "rationale": "Rapid rise in reef albedo consistent with zooxanthellae expulsion under heat stress."
+    },
+    "rank": 0.77,
+    "recommendedAction": "Deploy an ROV transect to ground-truth extent; flag zone for thermal watch."
+  },
+  {
+    "id": "INC-2026-0402",
+    "type": "plastic",
+    "severity": "medium",
+    "status": "new",
+    "zoneId": "Z-06",
+    "coords": [
+      -8.83,
+      103.48
+    ],
+    "detectedAt": "2026-07-20T14:20:26.454Z",
+    "source": "auv",
+    "imageKey": "ev-plastic-dark",
+    "ai": {
+      "label": "Plastic debris cluster",
+      "confidence": 0.9,
+      "modelVersion": "dsg-detect-v2.1",
+      "inferredAt": "2026-07-20T14:27:26.454Z",
+      "evidenceFrame": "AUV frame 5150 · INC-2026-0402",
+      "rationale": "Sub-surface particulate density three standard deviations above the zone baseline."
+    },
+    "rank": 1.1,
+    "recommendedAction": "Task a skimmer sweep on the drift path; notify the coastal cleanup partner."
+  },
+  {
+    "id": "INC-2026-0403",
+    "type": "plastic",
+    "severity": "low",
+    "status": "new",
+    "zoneId": "Z-03",
+    "coords": [
+      7.73,
+      120.97
+    ],
+    "detectedAt": "2026-07-23T09:11:10.443Z",
+    "source": "citizen",
+    "imageKey": "ev-plastic-shore",
+    "ai": {
+      "label": "Plastic debris cluster",
+      "confidence": 0.86,
+      "modelVersion": "dsg-detect-v2.1",
+      "inferredAt": "2026-07-23T09:32:10.443Z",
+      "evidenceFrame": "CITIZEN frame 6240 · INC-2026-0403",
+      "rationale": "Buoyant debris field tracked across two satellite passes; drift vector matches modelled gyre transport."
+    },
+    "rank": 0.62,
+    "recommendedAction": "Task a skimmer sweep on the drift path; notify the coastal cleanup partner."
+  },
+  {
+    "id": "INC-2026-0404",
+    "type": "species_alert",
+    "severity": "medium",
+    "status": "assigned",
+    "zoneId": "Z-03",
+    "coords": [
+      7.15,
+      120.99
+    ],
+    "detectedAt": "2026-07-15T05:26:16.979Z",
+    "source": "auv",
+    "imageKey": "sp-sea-turtle",
+    "ai": {
+      "label": "Protected species at risk",
+      "confidence": 0.76,
+      "modelVersion": "dsg-biotrack-v1.2",
+      "inferredAt": "2026-07-15T05:55:16.979Z",
+      "evidenceFrame": "AUV frame 6319 · INC-2026-0404",
+      "rationale": "Repeat sighting of a threatened species in a zone with a rising thermal-stress index."
+    },
+    "rank": 1.09,
+    "recommendedAction": "Establish a temporary exclusion radius; alert the marine-mammal response team.",
+    "assignedTo": "V-01"
+  },
+  {
+    "id": "INC-2026-0405",
+    "type": "species_alert",
+    "severity": "medium",
+    "status": "new",
+    "zoneId": "Z-04",
+    "coords": [
+      -5.57,
+      129.45
+    ],
+    "detectedAt": "2026-07-22T04:08:54.790Z",
+    "source": "citizen",
+    "imageKey": "sp-sixgill-shark",
+    "ai": {
+      "label": "Protected species at risk",
+      "confidence": 0.86,
+      "modelVersion": "dsg-biotrack-v1.2",
+      "inferredAt": "2026-07-22T04:14:54.790Z",
+      "evidenceFrame": "CITIZEN frame 1102 · INC-2026-0405",
+      "rationale": "Protected megafauna logged inside a high-traffic corridor during a documented dumping window."
+    },
+    "rank": 1.38,
+    "recommendedAction": "Establish a temporary exclusion radius; alert the marine-mammal response team."
+  },
+  {
+    "id": "INC-2026-0406",
+    "type": "species_alert",
+    "severity": "medium",
+    "status": "assigned",
+    "zoneId": "Z-01",
+    "coords": [
+      15.71,
+      147.88
+    ],
+    "detectedAt": "2026-07-11T18:26:05.785Z",
+    "source": "citizen",
+    "imageKey": "sp-red-crab",
+    "ai": {
+      "label": "Protected species at risk",
+      "confidence": 0.97,
+      "modelVersion": "dsg-biotrack-v1.2",
+      "inferredAt": "2026-07-11T18:28:05.785Z",
+      "evidenceFrame": "CITIZEN frame 1367 · INC-2026-0406",
+      "rationale": "Protected megafauna logged inside a high-traffic corridor during a documented dumping window."
+    },
+    "rank": 1.71,
+    "recommendedAction": "Establish a temporary exclusion radius; alert the marine-mammal response team.",
+    "assignedTo": "V-02"
+  },
+  {
+    "id": "INC-2026-0407",
+    "type": "bleaching",
+    "severity": "low",
+    "status": "assigned",
+    "zoneId": "Z-03",
+    "coords": [
+      8.56,
+      119.97
+    ],
+    "detectedAt": "2026-07-14T02:47:29.363Z",
+    "source": "auv",
+    "imageKey": "ev-bleached",
+    "ai": {
+      "label": "Coral bleaching event",
+      "confidence": 0.96,
+      "modelVersion": "dsg-thermal-v1.4",
+      "inferredAt": "2026-07-14T03:01:29.363Z",
+      "evidenceFrame": "AUV frame 5857 · INC-2026-0407",
+      "rationale": "Thermal-stress accumulation exceeding 4 degree-heating-weeks; colony pallor confirmed on ROV pass."
+    },
+    "rank": 0.69,
+    "recommendedAction": "Deploy an ROV transect to ground-truth extent; flag zone for thermal watch.",
+    "assignedTo": "V-03"
+  },
+  {
+    "id": "INC-2026-0408",
+    "type": "bleaching",
+    "severity": "low",
+    "status": "assigned",
+    "zoneId": "Z-06",
+    "coords": [
+      -9.45,
+      104.9
+    ],
+    "detectedAt": "2026-07-11T12:11:37.421Z",
+    "source": "satellite",
+    "imageKey": "ev-bleached",
+    "ai": {
+      "label": "Coral bleaching event",
+      "confidence": 0.85,
+      "modelVersion": "dsg-thermal-v1.4",
+      "inferredAt": "2026-07-11T12:31:37.421Z",
+      "evidenceFrame": "SATELLITE frame 8236 · INC-2026-0408",
+      "rationale": "Sea-surface temperature 2.1 °C above the seasonal mean for nine consecutive days; reflectance whitening observed."
+    },
+    "rank": 0.52,
+    "recommendedAction": "Deploy an ROV transect to ground-truth extent; flag zone for thermal watch.",
+    "assignedTo": "V-04"
+  },
+  {
+    "id": "INC-2026-0409",
+    "type": "bleaching",
+    "severity": "low",
+    "status": "new",
+    "zoneId": "Z-05",
+    "coords": [
+      10.1,
+      94.07
+    ],
+    "detectedAt": "2026-07-18T07:10:36.103Z",
+    "source": "auv",
+    "imageKey": "ev-bleached",
+    "ai": {
+      "label": "Coral bleaching event",
+      "confidence": 0.76,
+      "modelVersion": "dsg-thermal-v1.4",
+      "inferredAt": "2026-07-18T07:33:36.103Z",
+      "evidenceFrame": "AUV frame 3160 · INC-2026-0409",
+      "rationale": "Sea-surface temperature 2.1 °C above the seasonal mean for nine consecutive days; reflectance whitening observed."
+    },
+    "rank": 0.52,
+    "recommendedAction": "Deploy an ROV transect to ground-truth extent; flag zone for thermal watch."
+  },
+  {
+    "id": "INC-2026-0410",
+    "type": "bleaching",
+    "severity": "medium",
+    "status": "new",
+    "zoneId": "Z-01",
+    "coords": [
+      15.64,
+      147.06
+    ],
+    "detectedAt": "2026-07-21T05:47:17.872Z",
+    "source": "auv",
+    "imageKey": "ev-bleached",
+    "ai": {
+      "label": "Coral bleaching event",
+      "confidence": 0.89,
+      "modelVersion": "dsg-thermal-v1.4",
+      "inferredAt": "2026-07-21T06:10:17.872Z",
+      "evidenceFrame": "AUV frame 2812 · INC-2026-0410",
+      "rationale": "Rapid rise in reef albedo consistent with zooxanthellae expulsion under heat stress."
+    },
+    "rank": 1.57,
+    "recommendedAction": "Deploy an ROV transect to ground-truth extent; flag zone for thermal watch."
+  },
+  {
+    "id": "INC-2026-0411",
+    "type": "ghost_net",
+    "severity": "medium",
+    "status": "new",
+    "zoneId": "Z-02",
+    "coords": [
+      3.45,
+      123.03
+    ],
+    "detectedAt": "2026-07-20T03:50:44.991Z",
+    "source": "auv",
+    "imageKey": "ev-ghostnet",
+    "ai": {
+      "label": "Ghost net",
+      "confidence": 0.85,
+      "modelVersion": "dsg-detect-v2.1",
+      "inferredAt": "2026-07-20T04:08:44.991Z",
+      "evidenceFrame": "AUV frame 5792 · INC-2026-0411",
+      "rationale": "Repeating lattice signature on side-scan, drifting with the current — consistent with an abandoned gillnet."
+    },
+    "rank": 1.62,
+    "recommendedAction": "Dispatch nearest recovery vessel; net removal within 48 h to prevent further bycatch."
+  },
+  {
+    "id": "INC-2026-0412",
+    "type": "plastic",
+    "severity": "medium",
+    "status": "resolved",
+    "zoneId": "Z-03",
+    "coords": [
+      6.96,
+      120.64
+    ],
+    "detectedAt": "2026-07-10T11:59:59.689Z",
+    "source": "auv",
+    "imageKey": "ev-plastic-shore",
+    "ai": {
+      "label": "Plastic debris cluster",
+      "confidence": 0.82,
+      "modelVersion": "dsg-detect-v2.1",
+      "inferredAt": "2026-07-10T12:33:59.689Z",
+      "evidenceFrame": "AUV frame 8452 · INC-2026-0412",
+      "rationale": "Sub-surface particulate density three standard deviations above the zone baseline."
+    },
+    "rank": 1.18,
+    "recommendedAction": "Task a skimmer sweep on the drift path; notify the coastal cleanup partner."
+  },
+  {
+    "id": "INC-2026-0413",
+    "type": "species_alert",
+    "severity": "medium",
+    "status": "assigned",
+    "zoneId": "Z-04",
+    "coords": [
+      -5.62,
+      128.18
+    ],
+    "detectedAt": "2026-07-14T07:03:03.383Z",
+    "source": "citizen",
+    "imageKey": "sp-red-crab",
+    "ai": {
+      "label": "Protected species at risk",
+      "confidence": 0.97,
+      "modelVersion": "dsg-biotrack-v1.2",
+      "inferredAt": "2026-07-14T07:05:03.383Z",
+      "evidenceFrame": "CITIZEN frame 4748 · INC-2026-0413",
+      "rationale": "Individual tracked within 200 m of an active ghost-net detection; behaviour suggests entanglement risk."
+    },
+    "rank": 1.55,
+    "recommendedAction": "Establish a temporary exclusion radius; alert the marine-mammal response team.",
+    "assignedTo": "V-05"
+  },
+  {
+    "id": "INC-2026-0414",
+    "type": "plastic",
+    "severity": "low",
+    "status": "resolved",
+    "zoneId": "Z-07",
+    "coords": [
+      -4.02,
+      150.02
+    ],
+    "detectedAt": "2026-07-11T09:18:54.463Z",
+    "source": "citizen",
+    "imageKey": "ev-plastic-bottle",
+    "ai": {
+      "label": "Plastic debris cluster",
+      "confidence": 0.83,
+      "modelVersion": "dsg-detect-v2.1",
+      "inferredAt": "2026-07-11T09:26:54.463Z",
+      "evidenceFrame": "CITIZEN frame 4596 · INC-2026-0414",
+      "rationale": "Buoyant debris field tracked across two satellite passes; drift vector matches modelled gyre transport."
+    },
+    "rank": 0.7,
+    "recommendedAction": "Task a skimmer sweep on the drift path; notify the coastal cleanup partner."
+  },
+  {
+    "id": "INC-2026-0415",
+    "type": "plastic",
+    "severity": "low",
+    "status": "resolved",
+    "zoneId": "Z-05",
+    "coords": [
+      10.7,
+      92.74
+    ],
+    "detectedAt": "2026-07-10T20:27:42.455Z",
+    "source": "citizen",
+    "imageKey": "ev-plastic-dark",
+    "ai": {
+      "label": "Plastic debris cluster",
+      "confidence": 0.91,
+      "modelVersion": "dsg-detect-v2.1",
+      "inferredAt": "2026-07-10T21:01:42.455Z",
+      "evidenceFrame": "CITIZEN frame 2131 · INC-2026-0415",
+      "rationale": "Sub-surface particulate density three standard deviations above the zone baseline."
+    },
+    "rank": 0.62,
+    "recommendedAction": "Task a skimmer sweep on the drift path; notify the coastal cleanup partner."
+  },
+  {
+    "id": "INC-2026-0416",
+    "type": "bleaching",
+    "severity": "low",
+    "status": "new",
+    "zoneId": "Z-07",
+    "coords": [
+      -2.99,
+      149.91
+    ],
+    "detectedAt": "2026-07-23T01:23:26.855Z",
+    "source": "auv",
+    "imageKey": "ev-bleached",
+    "ai": {
+      "label": "Coral bleaching event",
+      "confidence": 0.97,
+      "modelVersion": "dsg-thermal-v1.4",
+      "inferredAt": "2026-07-23T01:53:26.855Z",
+      "evidenceFrame": "AUV frame 8087 · INC-2026-0416",
+      "rationale": "Sea-surface temperature 2.1 °C above the seasonal mean for nine consecutive days; reflectance whitening observed."
+    },
+    "rank": 0.81,
+    "recommendedAction": "Deploy an ROV transect to ground-truth extent; flag zone for thermal watch."
+  },
+  {
+    "id": "INC-2026-0417",
+    "type": "ghost_net",
+    "severity": "high",
+    "status": "assigned",
+    "zoneId": "Z-03",
+    "coords": [
+      7.99,
+      119.38
+    ],
+    "detectedAt": "2026-07-11T15:30:09.660Z",
+    "source": "auv",
+    "imageKey": "ev-ghostnet-turtle",
+    "ai": {
+      "label": "Ghost net",
+      "confidence": 0.86,
+      "modelVersion": "dsg-detect-v2.1",
+      "inferredAt": "2026-07-11T15:53:09.660Z",
+      "evidenceFrame": "AUV frame 6232 · INC-2026-0417",
+      "rationale": "High-density tangle detected below the thermocline; acoustic shadowing typical of derelict netting."
+    },
+    "rank": 1.86,
+    "recommendedAction": "Dispatch nearest recovery vessel; net removal within 48 h to prevent further bycatch.",
+    "assignedTo": "V-06"
+  },
+  {
+    "id": "INC-2026-0418",
+    "type": "species_alert",
+    "severity": "low",
+    "status": "new",
+    "zoneId": "Z-06",
+    "coords": [
+      -9.04,
+      104.79
+    ],
+    "detectedAt": "2026-07-18T17:44:29.150Z",
+    "source": "auv",
+    "imageKey": "sp-sixgill-shark",
+    "ai": {
+      "label": "Protected species at risk",
+      "confidence": 0.82,
+      "modelVersion": "dsg-biotrack-v1.2",
+      "inferredAt": "2026-07-18T18:12:29.150Z",
+      "evidenceFrame": "AUV frame 6473 · INC-2026-0418",
+      "rationale": "Repeat sighting of a threatened species in a zone with a rising thermal-stress index."
+    },
+    "rank": 0.5,
+    "recommendedAction": "Establish a temporary exclusion radius; alert the marine-mammal response team."
+  },
+  {
+    "id": "INC-2026-0419",
+    "type": "ghost_net",
+    "severity": "medium",
+    "status": "new",
+    "zoneId": "Z-05",
+    "coords": [
+      10.04,
+      94.19
+    ],
+    "detectedAt": "2026-07-21T00:58:35.244Z",
+    "source": "sonar",
+    "imageKey": "ev-ghostnet-turtle",
+    "ai": {
+      "label": "Ghost net",
+      "confidence": 0.81,
+      "modelVersion": "dsg-detect-v2.1",
+      "inferredAt": "2026-07-21T01:26:35.244Z",
+      "evidenceFrame": "SONAR frame 1110 · INC-2026-0419",
+      "rationale": "Repeating lattice signature on side-scan, drifting with the current — consistent with an abandoned gillnet."
+    },
+    "rank": 1.1,
+    "recommendedAction": "Dispatch nearest recovery vessel; net removal within 48 h to prevent further bycatch."
+  },
+  {
+    "id": "INC-2026-0420",
+    "type": "species_alert",
+    "severity": "medium",
+    "status": "new",
+    "zoneId": "Z-04",
+    "coords": [
+      -5.48,
+      129.47
+    ],
+    "detectedAt": "2026-07-18T00:46:51.757Z",
+    "source": "auv",
+    "imageKey": "sp-sixgill-shark",
+    "ai": {
+      "label": "Protected species at risk",
+      "confidence": 0.83,
+      "modelVersion": "dsg-biotrack-v1.2",
+      "inferredAt": "2026-07-18T01:24:51.757Z",
+      "evidenceFrame": "AUV frame 2713 · INC-2026-0420",
+      "rationale": "Repeat sighting of a threatened species in a zone with a rising thermal-stress index."
+    },
+    "rank": 1.33,
+    "recommendedAction": "Establish a temporary exclusion radius; alert the marine-mammal response team."
+  },
+  {
+    "id": "INC-2026-0421",
+    "type": "ghost_net",
+    "severity": "high",
+    "status": "assigned",
+    "zoneId": "Z-06",
+    "coords": [
+      -10.55,
+      104.94
+    ],
+    "detectedAt": "2026-07-14T13:30:17.757Z",
+    "source": "sonar",
+    "imageKey": "ev-ghostnet-turtle",
+    "ai": {
+      "label": "Ghost net",
+      "confidence": 0.66,
+      "modelVersion": "dsg-detect-v2.1",
+      "inferredAt": "2026-07-14T13:38:17.757Z",
+      "evidenceFrame": "SONAR frame 1530 · INC-2026-0421",
+      "rationale": "Repeating lattice signature on side-scan, drifting with the current — consistent with an abandoned gillnet."
+    },
+    "rank": 1.21,
+    "recommendedAction": "Dispatch nearest recovery vessel; net removal within 48 h to prevent further bycatch.",
+    "assignedTo": "V-01"
+  },
+  {
+    "id": "INC-2026-0422",
+    "type": "ghost_net",
+    "severity": "high",
+    "status": "new",
+    "zoneId": "Z-02",
+    "coords": [
+      3.67,
+      122.27
+    ],
+    "detectedAt": "2026-07-23T20:59:27.840Z",
+    "source": "auv",
+    "imageKey": "ev-ghostnet",
+    "ai": {
+      "label": "Ghost net",
+      "confidence": 0.95,
+      "modelVersion": "dsg-detect-v2.1",
+      "inferredAt": "2026-07-23T21:05:27.840Z",
+      "evidenceFrame": "AUV frame 4369 · INC-2026-0422",
+      "rationale": "Repeating lattice signature on side-scan, drifting with the current — consistent with an abandoned gillnet."
+    },
+    "rank": 2.71,
+    "recommendedAction": "Dispatch nearest recovery vessel; net removal within 48 h to prevent further bycatch."
+  },
+  {
+    "id": "INC-2026-0423",
+    "type": "plastic",
+    "severity": "low",
+    "status": "resolved",
+    "zoneId": "Z-04",
+    "coords": [
+      -6.26,
+      129.02
+    ],
+    "detectedAt": "2026-07-10T21:51:51.001Z",
+    "source": "citizen",
+    "imageKey": "ev-plastic-dark",
+    "ai": {
+      "label": "Plastic debris cluster",
+      "confidence": 0.77,
+      "modelVersion": "dsg-detect-v2.1",
+      "inferredAt": "2026-07-10T22:11:51.001Z",
+      "evidenceFrame": "CITIZEN frame 2862 · INC-2026-0423",
+      "rationale": "Sub-surface particulate density three standard deviations above the zone baseline."
+    },
+    "rank": 0.62,
+    "recommendedAction": "Task a skimmer sweep on the drift path; notify the coastal cleanup partner."
+  },
+  {
+    "id": "INC-2026-0424",
+    "type": "plastic",
+    "severity": "low",
+    "status": "new",
+    "zoneId": "Z-02",
+    "coords": [
+      3.81,
+      121.9
+    ],
+    "detectedAt": "2026-07-17T14:49:57.120Z",
+    "source": "satellite",
+    "imageKey": "ev-plastic-bottle",
+    "ai": {
+      "label": "Plastic debris cluster",
+      "confidence": 0.97,
+      "modelVersion": "dsg-detect-v2.1",
+      "inferredAt": "2026-07-17T14:58:57.120Z",
+      "evidenceFrame": "SATELLITE frame 3713 · INC-2026-0424",
+      "rationale": "Sub-surface particulate density three standard deviations above the zone baseline."
+    },
+    "rank": 0.92,
+    "recommendedAction": "Task a skimmer sweep on the drift path; notify the coastal cleanup partner."
+  },
+  {
+    "id": "INC-2026-0425",
+    "type": "species_alert",
+    "severity": "medium",
+    "status": "new",
+    "zoneId": "Z-04",
+    "coords": [
+      -4.49,
+      128.64
+    ],
+    "detectedAt": "2026-07-18T09:33:10.084Z",
+    "source": "auv",
+    "imageKey": "sp-sixgill-shark",
+    "ai": {
+      "label": "Protected species at risk",
+      "confidence": 0.94,
+      "modelVersion": "dsg-biotrack-v1.2",
+      "inferredAt": "2026-07-18T09:40:10.084Z",
+      "evidenceFrame": "AUV frame 9279 · INC-2026-0425",
+      "rationale": "Individual tracked within 200 m of an active ghost-net detection; behaviour suggests entanglement risk."
+    },
+    "rank": 1.5,
+    "recommendedAction": "Establish a temporary exclusion radius; alert the marine-mammal response team."
+  },
+  {
+    "id": "INC-2026-0426",
+    "type": "plastic",
+    "severity": "low",
+    "status": "new",
+    "zoneId": "Z-03",
+    "coords": [
+      7.77,
+      120.31
+    ],
+    "detectedAt": "2026-07-18T01:03:42.473Z",
+    "source": "auv",
+    "imageKey": "ev-plastic-bottle",
+    "ai": {
+      "label": "Plastic debris cluster",
+      "confidence": 0.86,
+      "modelVersion": "dsg-detect-v2.1",
+      "inferredAt": "2026-07-18T01:26:42.473Z",
+      "evidenceFrame": "AUV frame 5171 · INC-2026-0426",
+      "rationale": "Sub-surface particulate density three standard deviations above the zone baseline."
+    },
+    "rank": 0.62,
+    "recommendedAction": "Task a skimmer sweep on the drift path; notify the coastal cleanup partner."
+  },
+  {
+    "id": "INC-2026-0427",
+    "type": "plastic",
+    "severity": "low",
+    "status": "new",
+    "zoneId": "Z-04",
+    "coords": [
+      -5.06,
+      128.54
+    ],
+    "detectedAt": "2026-07-21T21:59:19.797Z",
+    "source": "citizen",
+    "imageKey": "ev-plastic-bottle",
+    "ai": {
+      "label": "Plastic debris cluster",
+      "confidence": 0.66,
+      "modelVersion": "dsg-detect-v2.1",
+      "inferredAt": "2026-07-21T22:17:19.797Z",
+      "evidenceFrame": "CITIZEN frame 2573 · INC-2026-0427",
+      "rationale": "Sub-surface particulate density three standard deviations above the zone baseline."
+    },
+    "rank": 0.53,
+    "recommendedAction": "Task a skimmer sweep on the drift path; notify the coastal cleanup partner."
+  },
+  {
+    "id": "INC-2026-0428",
+    "type": "ghost_net",
+    "severity": "medium",
+    "status": "new",
+    "zoneId": "Z-06",
+    "coords": [
+      -9.91,
+      105.09
+    ],
+    "detectedAt": "2026-07-20T07:37:46.449Z",
+    "source": "sonar",
+    "imageKey": "ev-ghostnet",
+    "ai": {
+      "label": "Ghost net",
+      "confidence": 0.77,
+      "modelVersion": "dsg-detect-v2.1",
+      "inferredAt": "2026-07-20T08:09:46.449Z",
+      "evidenceFrame": "SONAR frame 8780 · INC-2026-0428",
+      "rationale": "High-density tangle detected below the thermocline; acoustic shadowing typical of derelict netting."
+    },
+    "rank": 0.94,
+    "recommendedAction": "Dispatch nearest recovery vessel; net removal within 48 h to prevent further bycatch."
+  },
+  {
+    "id": "INC-2026-0429",
+    "type": "species_alert",
+    "severity": "low",
+    "status": "resolved",
+    "zoneId": "Z-08",
+    "coords": [
+      10.3,
+      117.71
+    ],
+    "detectedAt": "2026-07-11T05:18:53.295Z",
+    "source": "auv",
+    "imageKey": "sp-rockfish",
+    "ai": {
+      "label": "Protected species at risk",
+      "confidence": 0.79,
+      "modelVersion": "dsg-biotrack-v1.2",
+      "inferredAt": "2026-07-11T05:38:53.295Z",
+      "evidenceFrame": "AUV frame 5645 · INC-2026-0429",
+      "rationale": "Individual tracked within 200 m of an active ghost-net detection; behaviour suggests entanglement risk."
+    },
+    "rank": 0.45,
+    "recommendedAction": "Establish a temporary exclusion radius; alert the marine-mammal response team."
+  },
+  {
+    "id": "INC-2026-0430",
+    "type": "bleaching",
+    "severity": "medium",
+    "status": "resolved",
+    "zoneId": "Z-06",
+    "coords": [
+      -8.73,
+      104.02
+    ],
+    "detectedAt": "2026-07-11T06:29:24.089Z",
+    "source": "satellite",
+    "imageKey": "ev-bleached",
+    "ai": {
+      "label": "Coral bleaching event",
+      "confidence": 0.75,
+      "modelVersion": "dsg-thermal-v1.4",
+      "inferredAt": "2026-07-11T07:00:24.089Z",
+      "evidenceFrame": "SATELLITE frame 9294 · INC-2026-0430",
+      "rationale": "Thermal-stress accumulation exceeding 4 degree-heating-weeks; colony pallor confirmed on ROV pass."
+    },
+    "rank": 0.92,
+    "recommendedAction": "Deploy an ROV transect to ground-truth extent; flag zone for thermal watch."
+  },
+  {
+    "id": "INC-2026-0431",
+    "type": "plastic",
+    "severity": "low",
+    "status": "new",
+    "zoneId": "Z-06",
+    "coords": [
+      -9.65,
+      102.54
+    ],
+    "detectedAt": "2026-07-22T06:51:53.066Z",
+    "source": "auv",
+    "imageKey": "ev-plastic-dark",
+    "ai": {
+      "label": "Plastic debris cluster",
+      "confidence": 0.67,
+      "modelVersion": "dsg-detect-v2.1",
+      "inferredAt": "2026-07-22T07:21:53.066Z",
+      "evidenceFrame": "AUV frame 7939 · INC-2026-0431",
+      "rationale": "Surface reflectance cluster with polymer-consistent spectral signature; 40+ discrete fragments in frame."
+    },
+    "rank": 0.41,
+    "recommendedAction": "Task a skimmer sweep on the drift path; notify the coastal cleanup partner."
+  },
+  {
+    "id": "INC-2026-0432",
+    "type": "bleaching",
+    "severity": "low",
+    "status": "new",
+    "zoneId": "Z-03",
+    "coords": [
+      6.97,
+      120.47
+    ],
+    "detectedAt": "2026-07-21T10:32:20.657Z",
+    "source": "auv",
+    "imageKey": "ev-bleached",
+    "ai": {
+      "label": "Coral bleaching event",
+      "confidence": 0.87,
+      "modelVersion": "dsg-thermal-v1.4",
+      "inferredAt": "2026-07-21T10:56:20.657Z",
+      "evidenceFrame": "AUV frame 4621 · INC-2026-0432",
+      "rationale": "Thermal-stress accumulation exceeding 4 degree-heating-weeks; colony pallor confirmed on ROV pass."
+    },
+    "rank": 0.63,
+    "recommendedAction": "Deploy an ROV transect to ground-truth extent; flag zone for thermal watch."
+  },
+  {
+    "id": "INC-2026-0433",
+    "type": "plastic",
+    "severity": "low",
+    "status": "new",
+    "zoneId": "Z-03",
+    "coords": [
+      8.92,
+      119.97
+    ],
+    "detectedAt": "2026-07-21T00:59:19.026Z",
+    "source": "citizen",
+    "imageKey": "ev-plastic-bottle",
+    "ai": {
+      "label": "Plastic debris cluster",
+      "confidence": 0.95,
+      "modelVersion": "dsg-detect-v2.1",
+      "inferredAt": "2026-07-21T01:15:19.026Z",
+      "evidenceFrame": "CITIZEN frame 4648 · INC-2026-0433",
+      "rationale": "Buoyant debris field tracked across two satellite passes; drift vector matches modelled gyre transport."
+    },
+    "rank": 0.68,
+    "recommendedAction": "Task a skimmer sweep on the drift path; notify the coastal cleanup partner."
+  },
+  {
+    "id": "INC-2026-0434",
+    "type": "ghost_net",
+    "severity": "high",
+    "status": "new",
+    "zoneId": "Z-08",
+    "coords": [
+      10.81,
+      119.22
+    ],
+    "detectedAt": "2026-07-22T12:59:33.826Z",
+    "source": "auv",
+    "imageKey": "ev-ghostnet-turtle",
+    "ai": {
+      "label": "Ghost net",
+      "confidence": 0.91,
+      "modelVersion": "dsg-detect-v2.1",
+      "inferredAt": "2026-07-22T13:06:33.826Z",
+      "evidenceFrame": "AUV frame 4051 · INC-2026-0434",
+      "rationale": "Linear sonar returns at 18 m depth inconsistent with reef structure; pattern matches monofilament netting."
+    },
+    "rank": 1.56,
+    "recommendedAction": "Dispatch nearest recovery vessel; net removal within 48 h to prevent further bycatch."
+  },
+  {
+    "id": "INC-2026-0435",
+    "type": "plastic",
+    "severity": "low",
+    "status": "assigned",
+    "zoneId": "Z-01",
+    "coords": [
+      15.4,
+      147.88
+    ],
+    "detectedAt": "2026-07-14T10:30:00.884Z",
+    "source": "satellite",
+    "imageKey": "ev-plastic-bottle",
+    "ai": {
+      "label": "Plastic debris cluster",
+      "confidence": 0.92,
+      "modelVersion": "dsg-detect-v2.1",
+      "inferredAt": "2026-07-14T10:36:00.884Z",
+      "evidenceFrame": "SATELLITE frame 3834 · INC-2026-0435",
+      "rationale": "Surface reflectance cluster with polymer-consistent spectral signature; 40+ discrete fragments in frame."
+    },
+    "rank": 0.81,
+    "recommendedAction": "Task a skimmer sweep on the drift path; notify the coastal cleanup partner.",
+    "assignedTo": "V-02"
+  },
+  {
+    "id": "INC-2026-0436",
+    "type": "plastic",
+    "severity": "low",
+    "status": "new",
+    "zoneId": "Z-05",
+    "coords": [
+      9.65,
+      93.71
+    ],
+    "detectedAt": "2026-07-17T17:51:29.591Z",
+    "source": "auv",
+    "imageKey": "ev-plastic-bottle",
+    "ai": {
+      "label": "Plastic debris cluster",
+      "confidence": 0.94,
+      "modelVersion": "dsg-detect-v2.1",
+      "inferredAt": "2026-07-17T18:16:29.591Z",
+      "evidenceFrame": "AUV frame 9672 · INC-2026-0436",
+      "rationale": "Buoyant debris field tracked across two satellite passes; drift vector matches modelled gyre transport."
+    },
+    "rank": 0.64,
+    "recommendedAction": "Task a skimmer sweep on the drift path; notify the coastal cleanup partner."
+  },
+  {
+    "id": "INC-2026-0437",
+    "type": "plastic",
+    "severity": "low",
+    "status": "new",
+    "zoneId": "Z-02",
+    "coords": [
+      2.89,
+      122.88
+    ],
+    "detectedAt": "2026-07-23T20:59:27.840Z",
+    "source": "auv",
+    "imageKey": "ev-plastic-bottle",
+    "ai": {
+      "label": "Plastic debris cluster",
+      "confidence": 0.75,
+      "modelVersion": "dsg-detect-v2.1",
+      "inferredAt": "2026-07-23T21:29:27.840Z",
+      "evidenceFrame": "AUV frame 7543 · INC-2026-0437",
+      "rationale": "Sub-surface particulate density three standard deviations above the zone baseline."
+    },
+    "rank": 0.71,
+    "recommendedAction": "Task a skimmer sweep on the drift path; notify the coastal cleanup partner."
+  },
+  {
+    "id": "INC-2026-0438",
+    "type": "bleaching",
+    "severity": "high",
+    "status": "assigned",
+    "zoneId": "Z-08",
+    "coords": [
+      9.46,
+      118.14
+    ],
+    "detectedAt": "2026-07-13T18:20:09.430Z",
+    "source": "auv",
+    "imageKey": "ev-bleached",
+    "ai": {
+      "label": "Coral bleaching event",
+      "confidence": 0.75,
+      "modelVersion": "dsg-thermal-v1.4",
+      "inferredAt": "2026-07-13T18:40:09.430Z",
+      "evidenceFrame": "AUV frame 8844 · INC-2026-0438",
+      "rationale": "Rapid rise in reef albedo consistent with zooxanthellae expulsion under heat stress."
+    },
+    "rank": 1.28,
+    "recommendedAction": "Deploy an ROV transect to ground-truth extent; flag zone for thermal watch.",
+    "assignedTo": "V-03"
+  },
+  {
+    "id": "INC-2026-0439",
+    "type": "ghost_net",
+    "severity": "high",
+    "status": "new",
+    "zoneId": "Z-06",
+    "coords": [
+      -9.09,
+      103.45
+    ],
+    "detectedAt": "2026-07-22T16:18:27.827Z",
+    "source": "sonar",
+    "imageKey": "ev-ghostnet",
+    "ai": {
+      "label": "Ghost net",
+      "confidence": 0.78,
+      "modelVersion": "dsg-detect-v2.1",
+      "inferredAt": "2026-07-22T16:31:27.827Z",
+      "evidenceFrame": "SONAR frame 5205 · INC-2026-0439",
+      "rationale": "Linear sonar returns at 18 m depth inconsistent with reef structure; pattern matches monofilament netting."
+    },
+    "rank": 1.43,
+    "recommendedAction": "Dispatch nearest recovery vessel; net removal within 48 h to prevent further bycatch."
+  },
+  {
+    "id": "INC-2026-0440",
+    "type": "species_alert",
+    "severity": "low",
+    "status": "assigned",
+    "zoneId": "Z-02",
+    "coords": [
+      4.02,
+      122.29
+    ],
+    "detectedAt": "2026-07-14T02:55:41.298Z",
+    "source": "auv",
+    "imageKey": "sp-sea-turtle",
+    "ai": {
+      "label": "Protected species at risk",
+      "confidence": 0.76,
+      "modelVersion": "dsg-biotrack-v1.2",
+      "inferredAt": "2026-07-14T03:01:41.298Z",
+      "evidenceFrame": "AUV frame 6439 · INC-2026-0440",
+      "rationale": "Individual tracked within 200 m of an active ghost-net detection; behaviour suggests entanglement risk."
+    },
+    "rank": 0.72,
+    "recommendedAction": "Establish a temporary exclusion radius; alert the marine-mammal response team.",
+    "assignedTo": "V-04"
+  },
+  {
+    "id": "INC-2026-0441",
+    "type": "ghost_net",
+    "severity": "medium",
+    "status": "new",
+    "zoneId": "Z-04",
+    "coords": [
+      -5.38,
+      128.44
+    ],
+    "detectedAt": "2026-07-23T20:54:50.019Z",
+    "source": "sonar",
+    "imageKey": "ev-ghostnet",
+    "ai": {
+      "label": "Ghost net",
+      "confidence": 0.75,
+      "modelVersion": "dsg-detect-v2.1",
+      "inferredAt": "2026-07-23T21:09:50.019Z",
+      "evidenceFrame": "SONAR frame 6588 · INC-2026-0441",
+      "rationale": "Linear sonar returns at 18 m depth inconsistent with reef structure; pattern matches monofilament netting."
+    },
+    "rank": 1.2,
+    "recommendedAction": "Dispatch nearest recovery vessel; net removal within 48 h to prevent further bycatch."
+  }
+]
