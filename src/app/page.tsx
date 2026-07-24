@@ -22,6 +22,8 @@ import { riskToSeverity } from "@/lib/ui-meta";
 import { LazyGlobe } from "@/components/three/LazyGlobe";
 import { MarineSnow } from "@/components/landing/MarineSnow";
 import { StatCounter } from "@/components/landing/StatCounter";
+import { SonarSweep } from "@/components/landing/SonarSweep";
+import { GodRays } from "@/components/landing/GodRays";
 
 export const metadata = pageMetadata({
   title: "Sonar — AI monitoring for deep-ocean pollution & biodiversity",
@@ -94,37 +96,43 @@ export default async function Home() {
 
   return (
     <>
-      {/* 1 · HERO */}
-      <section className="relative flex min-h-[90vh] items-center overflow-hidden">
+      {/* 1 · HERO — cinematic descent */}
+      <section className="relative flex min-h-screen items-center overflow-hidden">
         {/* Hero backdrop as a CSS background, not an <img>: background images are
             not LCP-eligible, so the LCP element is the H1 TEXT (paints at ~FCP)
-            exactly as the spec requires. Preloaded so it still appears promptly. */}
+            exactly as the spec requires. Preloaded so it still appears promptly.
+            Wrapped so the slow Ken-Burns descent doesn't clip the section. */}
         <link rel="preload" as="image" href={hero.src} />
-        <div
-          aria-hidden="true"
-          className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: `url(${hero.src})` }}
-        />
+        <div aria-hidden="true" className="absolute inset-0 overflow-hidden">
+          <div
+            className="animate-depth-pan absolute inset-0 bg-cover bg-center"
+            style={{ backgroundImage: `url(${hero.src})` }}
+          />
+        </div>
 
-        {/* Dark gradient overlays for legibility */}
+        {/* Dark gradient overlays for legibility + depth */}
         <div
           aria-hidden="true"
           className="absolute inset-0 bg-gradient-to-b from-abyss/70 via-trench/75 to-abyss"
         />
         <div
           aria-hidden="true"
-          className="absolute inset-0 bg-gradient-to-r from-abyss/85 via-abyss/40 to-transparent"
+          className="absolute inset-0 bg-gradient-to-r from-abyss/90 via-abyss/45 to-transparent"
         />
 
-        {/* Marine-snow particles (client, reduced-motion aware) */}
+        {/* Descending light shafts + marine-snow */}
+        <GodRays />
         <MarineSnow />
 
-        <div className="relative mx-auto w-full max-w-7xl px-4 py-20 sm:px-6">
-          <div className="flex max-w-3xl flex-col gap-6">
+        <div className="relative mx-auto grid w-full max-w-7xl grid-cols-1 items-center gap-12 px-4 py-24 sm:px-6 lg:grid-cols-[1.15fr_0.85fr]">
+          {/* Left — copy */}
+          <div className="flex max-w-2xl flex-col gap-6">
             <div className="flex items-center gap-2 text-sm text-text-muted">
               <LiveDot label="Live" />
               <span>
                 <span className="tabular font-medium text-text">1,284</span> sensors reporting
+                <span className="mx-2 text-line-bright">·</span>
+                <span className="tabular font-medium text-text">8</span> zones under watch
               </span>
             </div>
 
@@ -134,7 +142,7 @@ export default async function Home() {
 
             <p className="max-w-xl text-lg text-text-muted">
               Sonar turns five blind sensor feeds into one ranked, auditable
-              action queue.
+              action queue — so the next response goes where it matters most.
             </p>
 
             <div className="flex flex-wrap gap-3">
@@ -145,7 +153,41 @@ export default async function Home() {
                 See live threats
               </ButtonLink>
             </div>
+
+            {/* Live telemetry strip — instrument readout */}
+            <dl className="mt-4 grid max-w-lg grid-cols-2 gap-x-8 gap-y-3 border-t border-line/60 pt-5 sm:grid-cols-4">
+              {[
+                { k: "Depth", v: "3,812", u: "m" },
+                { k: "Pressure", v: "384", u: "bar" },
+                { k: "Contacts", v: "27", u: "live" },
+                { k: "Integrity", v: "99.2", u: "%" },
+              ].map((t) => (
+                <div key={t.k} className="flex flex-col gap-0.5">
+                  <dt className="text-[0.7rem] font-semibold uppercase tracking-wide text-text-dim">
+                    {t.k}
+                  </dt>
+                  <dd className="tabular font-display text-lg font-semibold text-text">
+                    {t.v}
+                    <span className="ml-1 text-xs font-normal text-text-dim">{t.u}</span>
+                  </dd>
+                </div>
+              ))}
+            </dl>
           </div>
+
+          {/* Right — the signature sonar dish */}
+          <div className="relative mx-auto hidden w-full max-w-md lg:block">
+            <SonarSweep />
+          </div>
+        </div>
+
+        {/* Scroll cue */}
+        <div
+          aria-hidden="true"
+          className="absolute bottom-6 left-1/2 flex -translate-x-1/2 flex-col items-center gap-2 text-text-dim"
+        >
+          <span className="text-[0.7rem] font-semibold uppercase tracking-[0.2em]">Descend</span>
+          <span className="h-8 w-px animate-live-pulse bg-gradient-to-b from-glow to-transparent" />
         </div>
       </section>
 

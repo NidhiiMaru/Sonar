@@ -149,6 +149,97 @@ body {
   }
 }
 
+/* ── Cinematic hero motion ─────────────────────────────────────
+   Decorative only; all of it is killed by the reduced-motion block
+   below and every layer is aria-hidden. */
+
+/* Sonar sweep — the signature. A conic wedge rakes around the dish. */
+@keyframes sonar-rotate {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Detection ping — a blip flares as the sweep passes it. */
+@keyframes sonar-ping {
+  0% {
+    transform: scale(0.4);
+    opacity: 0;
+  }
+  6% {
+    opacity: 1;
+  }
+  60% {
+    opacity: 0.55;
+  }
+  100% {
+    transform: scale(2.5);
+    opacity: 0;
+  }
+}
+
+/* The steady contact dot at a blip's centre. */
+@keyframes sonar-contact {
+  0%,
+  100% {
+    opacity: 0.35;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+/* God-rays — slow shimmer of light shafts descending through water. */
+@keyframes god-rays {
+  0%,
+  100% {
+    opacity: 0.35;
+    transform: translateX(-2%) scaleY(1);
+  }
+  50% {
+    opacity: 0.7;
+    transform: translateX(2%) scaleY(1.06);
+  }
+}
+
+/* Ambient rise — bioluminescent motes drifting upward. */
+@keyframes rise {
+  0% {
+    transform: translate3d(0, 0, 0);
+    opacity: 0;
+  }
+  12% {
+    opacity: var(--rise-opacity, 0.5);
+  }
+  88% {
+    opacity: var(--rise-opacity, 0.5);
+  }
+  100% {
+    transform: translate3d(var(--rise-drift, 0), -105vh, 0);
+    opacity: 0;
+  }
+}
+
+/* Slow Ken-Burns descent on the hero backdrop. */
+@keyframes depth-pan {
+  0% {
+    transform: scale(1.05) translateY(0);
+  }
+  100% {
+    transform: scale(1.16) translateY(-2%);
+  }
+}
+
+.animate-sonar-rotate {
+  animation: sonar-rotate 5s linear infinite;
+}
+.animate-god-rays {
+  animation: god-rays 9s ease-in-out infinite;
+}
+.animate-depth-pan {
+  animation: depth-pan 24s var(--ease-descent) infinite alternate;
+}
+
 /* Respect the user. Kill all decorative motion. */
 @media (prefers-reduced-motion: reduce) {
   *,
