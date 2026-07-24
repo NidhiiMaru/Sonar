@@ -1,0 +1,387 @@
+[
+  {
+    "id": "SP-01",
+    "slug": "dumbo-octopus",
+    "commonName": "Dumbo octopus",
+    "scientificName": "Grimpoteuthis sp.",
+    "iucn": "DD",
+    "populationTrend": "stable",
+    "trendSeries": [
+      68,
+      68,
+      65,
+      66,
+      67,
+      65,
+      67,
+      67,
+      71,
+      69,
+      68,
+      67
+    ],
+    "zoneIds": [
+      "Z-01",
+      "Z-04"
+    ],
+    "imageKey": "sp-dumbo-octopus",
+    "depthRange": [
+      3000,
+      4800
+    ],
+    "blurb": "The deepest-living of all known octopuses, named for the ear-like fins it flaps to hover above the abyssal seabed."
+  },
+  {
+    "id": "SP-02",
+    "slug": "deep-sea-anglerfish",
+    "commonName": "Deep-sea anglerfish",
+    "scientificName": "Chaunacops coloratus",
+    "iucn": "LC",
+    "populationTrend": "stable",
+    "trendSeries": [
+      57,
+      59,
+      60,
+      59,
+      57,
+      56,
+      56,
+      55,
+      57,
+      58,
+      59,
+      56
+    ],
+    "zoneIds": [
+      "Z-01",
+      "Z-06"
+    ],
+    "imageKey": "sp-anglerfish",
+    "depthRange": [
+      1800,
+      3300
+    ],
+    "blurb": "A sit-and-wait ambush predator of the bathyal zone that walks the seafloor on modified, limb-like fins."
+  },
+  {
+    "id": "SP-03",
+    "slug": "giant-tubeworm",
+    "commonName": "Giant tubeworm",
+    "scientificName": "Riftia pachyptila",
+    "iucn": "LC",
+    "populationTrend": "stable",
+    "trendSeries": [
+      46,
+      45,
+      45,
+      45,
+      42,
+      42,
+      43,
+      44,
+      42,
+      39,
+      38,
+      37
+    ],
+    "zoneIds": [
+      "Z-06",
+      "Z-01"
+    ],
+    "imageKey": "sp-tubeworms",
+    "depthRange": [
+      1500,
+      2600
+    ],
+    "blurb": "A hydrothermal-vent worm with no gut, living entirely on chemosynthetic bacteria housed in its tissues."
+  },
+  {
+    "id": "SP-04",
+    "slug": "green-sea-turtle",
+    "commonName": "Green sea turtle",
+    "scientificName": "Chelonia mydas",
+    "iucn": "EN",
+    "populationTrend": "decreasing",
+    "trendSeries": [
+      74,
+      72,
+      70,
+      68,
+      66,
+      64,
+      62,
+      61,
+      59,
+      59,
+      57,
+      55
+    ],
+    "zoneIds": [
+      "Z-02",
+      "Z-03",
+      "Z-08"
+    ],
+    "imageKey": "sp-sea-turtle",
+    "depthRange": [
+      0,
+      40
+    ],
+    "blurb": "A long-lived marine reptile and important seagrass grazer; globally endangered, with entanglement a leading threat."
+  },
+  {
+    "id": "SP-05",
+    "slug": "humpback-whale",
+    "commonName": "Humpback whale",
+    "scientificName": "Megaptera novaeangliae",
+    "iucn": "LC",
+    "populationTrend": "increasing",
+    "trendSeries": [
+      76,
+      77,
+      78,
+      81,
+      83,
+      85,
+      85,
+      89,
+      89,
+      91,
+      90,
+      90
+    ],
+    "zoneIds": [
+      "Z-07",
+      "Z-04"
+    ],
+    "imageKey": "sp-humpback",
+    "depthRange": [
+      0,
+      200
+    ],
+    "blurb": "A migratory baleen whale whose global numbers have recovered strongly since the end of commercial whaling."
+  },
+  {
+    "id": "SP-06",
+    "slug": "bluntnose-sixgill-shark",
+    "commonName": "Bluntnose sixgill shark",
+    "scientificName": "Hexanchus griseus",
+    "iucn": "NT",
+    "populationTrend": "decreasing",
+    "trendSeries": [
+      60,
+      57,
+      57,
+      55,
+      51,
+      49,
+      46,
+      45,
+      43,
+      42,
+      41,
+      40
+    ],
+    "zoneIds": [
+      "Z-01",
+      "Z-06"
+    ],
+    "imageKey": "sp-sixgill-shark",
+    "depthRange": [
+      0,
+      2500
+    ],
+    "blurb": "A large, slow-growing deep-water shark that rises toward the surface at night; near threatened and sensitive to fishing pressure."
+  },
+  {
+    "id": "SP-07",
+    "slug": "crown-of-thorns-starfish",
+    "commonName": "Crown-of-thorns starfish",
+    "scientificName": "Acanthaster planci",
+    "iucn": "LC",
+    "populationTrend": "increasing",
+    "trendSeries": [
+      64,
+      69,
+      70,
+      73,
+      73,
+      76,
+      78,
+      81,
+      84,
+      87,
+      90,
+      91
+    ],
+    "zoneIds": [
+      "Z-02",
+      "Z-03"
+    ],
+    "imageKey": "sp-crown-of-thorns",
+    "depthRange": [
+      0,
+      30
+    ],
+    "blurb": "A coral-eating sea star whose population outbreaks can strip reefs; monitored as a driver of coral decline."
+  },
+  {
+    "id": "SP-08",
+    "slug": "pink-helmet-jellyfish",
+    "commonName": "Pink helmet jellyfish",
+    "scientificName": "Poralia rufescens",
+    "iucn": "DD",
+    "populationTrend": "stable",
+    "trendSeries": [
+      64,
+      65,
+      66,
+      68,
+      67,
+      71,
+      70,
+      70,
+      71,
+      71,
+      71,
+      70
+    ],
+    "zoneIds": [
+      "Z-04",
+      "Z-07"
+    ],
+    "imageKey": "sp-pink-jelly",
+    "depthRange": [
+      1000,
+      3000
+    ],
+    "blurb": "A fragile, deep-water scyphozoan tinted red — a colour that is effectively invisible in the lightless deep."
+  },
+  {
+    "id": "SP-09",
+    "slug": "bamboo-coral",
+    "commonName": "Bamboo coral",
+    "scientificName": "Isidella sp.",
+    "iucn": "VU",
+    "populationTrend": "decreasing",
+    "trendSeries": [
+      71,
+      70,
+      70,
+      69,
+      67,
+      65,
+      67,
+      66,
+      66,
+      66,
+      63,
+      62
+    ],
+    "zoneIds": [
+      "Z-01",
+      "Z-07"
+    ],
+    "imageKey": "sp-bamboo-coral",
+    "depthRange": [
+      500,
+      2000
+    ],
+    "blurb": "A slow-growing deep-sea coral that builds centuries-old habitat; vulnerable to bottom trawling and warming."
+  },
+  {
+    "id": "SP-10",
+    "slug": "rougheye-rockfish",
+    "commonName": "Rougheye rockfish",
+    "scientificName": "Sebastes aleutianus",
+    "iucn": "LC",
+    "populationTrend": "stable",
+    "trendSeries": [
+      51,
+      53,
+      54,
+      55,
+      56,
+      58,
+      56,
+      55,
+      57,
+      58,
+      59,
+      58
+    ],
+    "zoneIds": [
+      "Z-01",
+      "Z-04"
+    ],
+    "imageKey": "sp-rockfish",
+    "depthRange": [
+      150,
+      900
+    ],
+    "blurb": "One of the longest-lived fishes known, with individuals verified beyond 200 years; shelters in deep coral."
+  },
+  {
+    "id": "SP-11",
+    "slug": "red-deep-sea-crab",
+    "commonName": "Red deep-sea crab",
+    "scientificName": "Chaceon quinquedens",
+    "iucn": "DD",
+    "populationTrend": "stable",
+    "trendSeries": [
+      63,
+      62,
+      61,
+      60,
+      60,
+      61,
+      62,
+      63,
+      61,
+      61,
+      64,
+      62
+    ],
+    "zoneIds": [
+      "Z-03",
+      "Z-08"
+    ],
+    "imageKey": "sp-red-crab",
+    "depthRange": [
+      200,
+      1800
+    ],
+    "blurb": "A deep-slope crab that scavenges the continental margin; the target of a small, tightly managed fishery."
+  },
+  {
+    "id": "SP-12",
+    "slug": "lobe-coral",
+    "commonName": "Lobe coral",
+    "scientificName": "Porites lobata",
+    "iucn": "NT",
+    "populationTrend": "decreasing",
+    "trendSeries": [
+      44,
+      41,
+      39,
+      34,
+      31,
+      30,
+      29,
+      28,
+      26,
+      24,
+      23,
+      21
+    ],
+    "zoneIds": [
+      "Z-02",
+      "Z-03"
+    ],
+    "imageKey": "sp-lobe-coral",
+    "depthRange": [
+      0,
+      30
+    ],
+    "blurb": "A massive reef-building coral and a key bleaching indicator; whitens rapidly under sustained heat stress."
+  }
+]

@@ -1,0 +1,64 @@
+[
+  {
+    "id": "V-01",
+    "name": "RV Meridian",
+    "org": "Blue Sentinel Trust",
+    "coords": [
+      4.25,
+      122.69
+    ],
+    "status": "available"
+  },
+  {
+    "id": "V-02",
+    "name": "MV Kaito",
+    "org": "Blue Sentinel Trust",
+    "coords": [
+      -9.81,
+      104.81
+    ],
+    "status": "dispatched",
+    "etaMinutes": 175
+  },
+  {
+    "id": "V-03",
+    "name": "RV Sentinel",
+    "org": "Blue Sentinel Trust",
+    "coords": [
+      7.38,
+      120.05
+    ],
+    "status": "available"
+  },
+  {
+    "id": "V-04",
+    "name": "MV Nusantara",
+    "org": "Coastal Response Agency",
+    "coords": [
+      -5.21,
+      128.42
+    ],
+    "status": "available"
+  },
+  {
+    "id": "V-05",
+    "name": "RV Aldebaran",
+    "org": "Coastal Response Agency",
+    "coords": [
+      15.83,
+      147.31
+    ],
+    "status": "dispatched",
+    "etaMinutes": 177
+  },
+  {
+    "id": "V-06",
+    "name": "MV Tanjung",
+    "org": "Coastal Response Agency",
+    "coords": [
+      -3.56,
+      150.17
+    ],
+    "status": "available"
+  }
+]
