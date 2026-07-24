@@ -10,9 +10,9 @@ runs a *simulated* AI layer over them (detection, classification, forecast), and
 one ranked, auditable action queue. Every AI claim shows its **confidence**, its **source
 frame** and its **model version** — trust the AI, and audit it.
 
+🌊 **Live:** https://sonar-ten-pi.vercel.app
 📦 **Repo:** https://github.com/NidhiiMaru/Sonar
 🧭 **Team:** Sonar Team
-🚀 **Run it:** `pnpm install && pnpm dev` → http://localhost:3000
 
 ---
 

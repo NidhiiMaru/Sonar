@@ -6,7 +6,7 @@ export const SITE = {
   tagline: "AI monitoring for deep-ocean pollution & biodiversity",
   description:
     "Five blind sensor feeds, one ranked action queue. Track plastic, ghost nets, bleaching and endangered species across the deep ocean in real time.",
-  url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://sonar.vercel.app",
+  url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://sonar-ten-pi.vercel.app",
   repo: "https://github.com/NidhiiMaru/Sonar",
   team: "Sonar Team",
   locale: "en",
