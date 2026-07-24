@@ -2,7 +2,7 @@
 
 import { Suspense, useMemo, useRef } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
-import { OrbitControls, useTexture } from "@react-three/drei";
+import { OrbitControls, useTexture, useGLTF } from "@react-three/drei";
 import * as THREE from "three";
 import zonesFixture from "@/fixtures/zones.json";
 import { riskToSeverity } from "@/lib/ui-meta";
@@ -32,8 +32,8 @@ function Atmosphere() {
     () =>
       new THREE.ShaderMaterial({
         uniforms: {
-          uColor: { value: new THREE.Color("#4bc8f0") },
-          uIntensity: { value: 1.1 },
+          uColor: { value: new THREE.Color("#3aa6d8") },
+          uIntensity: { value: 0.5 },
         },
         vertexShader: /* glsl */ `
           varying vec3 vNormal;
@@ -52,8 +52,8 @@ function Atmosphere() {
           uniform float uIntensity;
           void main() {
             float rim = 1.0 - max(dot(vNormal, vView), 0.0);
-            rim = pow(rim, 3.0);
-            gl_FragColor = vec4(uColor * rim * uIntensity, rim);
+            rim = pow(rim, 4.5);
+            gl_FragColor = vec4(uColor * uIntensity, rim);
           }
         `,
         transparent: true,
@@ -63,7 +63,7 @@ function Atmosphere() {
       }),
     [],
   );
-  return <mesh scale={1.22} geometry={UNIT_SPHERE} material={material} />;
+  return <mesh scale={1.14} geometry={UNIT_SPHERE} material={material} />;
 }
 
 /* ── Starfield — faint depth behind the planet ───────────────────── */
@@ -136,8 +136,8 @@ function Beacon({ zone, index }: { zone: Zone; index: number }) {
         <meshBasicMaterial color={hex} />
       </mesh>
       <mesh position={tip}>
-        <sphereGeometry args={[0.05 + t * 0.03, 16, 16]} />
-        <meshBasicMaterial color={hex} transparent opacity={0.24} blending={THREE.AdditiveBlending} depthWrite={false} />
+        <sphereGeometry args={[0.038 + t * 0.02, 16, 16]} />
+        <meshBasicMaterial color={hex} transparent opacity={0.16} blending={THREE.AdditiveBlending} depthWrite={false} />
       </mesh>
       <mesh ref={ring} position={surface.clone().multiplyScalar(1.003)} quaternion={ringQuat}>
         <ringGeometry args={[baseRing, baseRing * 1.35, 40]} />
@@ -194,6 +194,54 @@ function Earth() {
   );
 }
 
+/* ── School — detailed CC0 Barramundi fish drifting around the globe ─ */
+const FISH = [
+  { r: 1.42, scale: 0.42, speed: 0.22, tilt: [0.5, 0, 0.15], phase: 0 },
+  { r: 1.58, scale: 0.34, speed: -0.17, tilt: [-0.35, 0, 0.5], phase: 2.1 },
+  { r: 1.33, scale: 0.5, speed: 0.15, tilt: [0.15, 0, -0.6], phase: 4.0 },
+  { r: 1.66, scale: 0.3, speed: -0.24, tilt: [0.8, 0, -0.2], phase: 1.2 },
+] as const;
+
+function Fish({
+  r,
+  scale,
+  speed,
+  tilt,
+  phase,
+  animate,
+}: (typeof FISH)[number] & { animate: boolean }) {
+  const orbit = useRef<THREE.Group>(null);
+  const bob = useRef<THREE.Group>(null);
+  const { scene } = useGLTF("/models/fish.glb");
+  const model = useMemo(() => scene.clone(true), [scene]);
+
+  useFrame((state) => {
+    const t = animate ? state.clock.elapsedTime : phase;
+    if (orbit.current) orbit.current.rotation.y = t * speed + phase;
+    if (bob.current) bob.current.position.y = Math.sin(t * 1.4 + phase) * 0.04;
+  });
+
+  return (
+    <group ref={orbit} rotation={tilt as unknown as [number, number, number]}>
+      <group position={[r, 0, 0]} rotation={[0, Math.PI, 0]}>
+        <group ref={bob}>
+          <primitive object={model} scale={scale} />
+        </group>
+      </group>
+    </group>
+  );
+}
+
+function School({ animate }: { animate: boolean }) {
+  return (
+    <>
+      {FISH.map((f, i) => (
+        <Fish key={i} {...f} animate={animate} />
+      ))}
+    </>
+  );
+}
+
 function Scene({ animate }: { animate: boolean }) {
   const group = useRef<THREE.Group>(null);
   const zones = zonesFixture as unknown as Zone[];
@@ -227,6 +275,7 @@ export default function ZoneGlobe({ animate = true }: { animate?: boolean }) {
       <Atmosphere />
       <Suspense fallback={null}>
         <Scene animate={animate} />
+        <School animate={animate} />
       </Suspense>
       <OrbitControls
         enablePan={false}
@@ -238,6 +287,8 @@ export default function ZoneGlobe({ animate = true }: { animate?: boolean }) {
     </Canvas>
   );
 }
+
+useGLTF.preload("/models/fish.glb");
 
 /* shared unit sphere geometry */
 const UNIT_SPHERE = new THREE.SphereGeometry(1, 64, 64);

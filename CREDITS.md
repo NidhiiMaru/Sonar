@@ -25,6 +25,12 @@ Government.
 
 - Bleached *Porites lobata* coral colony — Francois Seneca (CC0 1.0). Used as the coral
   bleaching indicator.
+- **3D model — "BarramundiFish"** — Microsoft (CC0 1.0), via the [Khronos glTF Sample
+  Assets](https://github.com/KhronosGroup/glTF-Sample-Assets). The fish drifting around the
+  risk globe. Textures resized + WebP-compressed for the web (12 MB → 0.35 MB).
+- **Earth textures** (day map, bathymetry/specular, normals, clouds, city lights) — derived
+  from **NASA** Blue Marble / Visible Earth imagery (U.S. Government public domain), via the
+  [three.js](https://github.com/mrdoob/three.js) example texture set.
 
 ## Pexels License (free for commercial use, no attribution required)
 
