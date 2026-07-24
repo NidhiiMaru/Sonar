@@ -42,7 +42,7 @@ export interface Incident {
   source: SourceKind;
   imageKey: string; // -> public/images/... via IMAGE_MAP
   ai: AiVerdict;
-  rank: number; // computed, see 04-MOCK-DATA §4
+  rank: number; // computed
   recommendedAction: string;
   assignedTo?: string; // vesselId
 }
